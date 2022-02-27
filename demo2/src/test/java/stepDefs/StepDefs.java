@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.pages.ABTestingPage;
 import com.pages.AddRemoveElementsPage;
+import com.pages.BasicAuthPage;
 import com.pages.HomePage;
 
 import io.cucumber.java.en.And;
@@ -20,6 +21,8 @@ public class StepDefs {
 	public ABTestingPage ABtp=new ABTestingPage(driver);
 	
 	public AddRemoveElementsPage ARep=new AddRemoveElementsPage(driver);
+	
+	public BasicAuthPage BAp=new BasicAuthPage(driver);
 	
 	
 	@Given("Start {string} browser and launch the website {string}")
@@ -95,5 +98,35 @@ public class StepDefs {
 	{
 		Integer i=Integer.valueOf(n);
 		ARep.clickOnDeletebuttonAddRemoveElementsPage(i);
+	}
+	
+	@And("User clicks on the {string} Basic Auth link")
+	public void userClickOnBasicAuthLink(String s)
+	{
+		BAp.clickOnBasicAuthPageLink();
+	}
+	
+	@Then("User dismisses the alert by clicking on Cancel button of authentication popup and validates {string}")
+	public void userDismissAlertOnBasicAuthLink(String heading)
+	{
+		BAp.dismissBasicAuthAlertPageLink(heading);
+	}
+	
+	@Then("User accepts the alert by sending the correct credentials")
+	public void userAcceptAlertOnBasicAuthLink()
+	{
+		BAp.acceptBasicAuthAlertPageLink();
+	}
+	
+	@And("User validates the Page title as {string} on Basic Auth link")
+	public void validatePageTitleAsBasicAuthLink(String heading)
+	{
+		BAp.titleOfBasicAuthPage(heading);
+	}
+	
+	@And("User validates the Page content as {string} on Basic Auth link")
+	public void validatePageCoontentOnBasicAuthLink(String heading)
+	{
+		BAp.contentOfBasicAuthPage(heading);
 	}
 }
