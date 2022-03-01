@@ -1,5 +1,5 @@
- @BasicAuth_Tests
-Feature: To verify the different functionalities present on the A/B Testing page of Herokuapp website
+@BasicAuth_Tests
+Feature: To verify the different functionalities present on the Basic Auth page of Herokuapp website
 
 			Scenario: To verify that BasicAuth option is enabled and clickable
 				Given Start "Firefox" browser and launch the website "https://the-internet.herokuapp.com/" 

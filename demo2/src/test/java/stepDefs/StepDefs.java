@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import com.pages.ABTestingPage;
 import com.pages.AddRemoveElementsPage;
 import com.pages.BasicAuthPage;
+import com.pages.BrokenImagesPage;
 import com.pages.HomePage;
 
 import io.cucumber.java.en.And;
@@ -24,7 +25,10 @@ public class StepDefs {
 	
 	public BasicAuthPage BAp=new BasicAuthPage(driver);
 	
+	public BrokenImagesPage BIp=new BrokenImagesPage(driver);
 	
+	
+	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
 	{
@@ -56,6 +60,8 @@ public class StepDefs {
 		hp.closeBrowserSession();
 	}
 	
+	//************************************************StepDefs for A/B Testing Page validation**********************************//
+	
 	@And("User clicks on the {string} AB Testing link")
 	public void userClicksOnABTestingLink(String heading)
 	{
@@ -73,6 +79,8 @@ public class StepDefs {
 	{
 		ABtp.contentOfPage(content);
 	}
+	
+	//************************************************StepDefs for Add/Remove Elements Page validation**********************************//
 	
 	@And("User clicks on the {string} Add Remove Elements link")
 	public void userClicksOnAddRemoveElementsLink(String heading)
@@ -99,6 +107,8 @@ public class StepDefs {
 		Integer i=Integer.valueOf(n);
 		ARep.clickOnDeletebuttonAddRemoveElementsPage(i);
 	}
+	
+	//************************************************StepDefs for Basic Auth Page validation**********************************//
 	
 	@And("User clicks on the {string} Basic Auth link")
 	public void userClickOnBasicAuthLink(String s)
@@ -128,5 +138,25 @@ public class StepDefs {
 	public void validatePageCoontentOnBasicAuthLink(String heading)
 	{
 		BAp.contentOfBasicAuthPage(heading);
+	}
+	
+	//************************************************StepDefs for Broken Images Page validation**********************************//
+	
+	@And("User clicks on the {string} Broken Images link")
+	public void userClickOnBrokenImagesLink(String s)
+	{
+		BIp.clickOnBrokenImagesPageLink();
+	}
+	
+	@Then("User validates the Page title as {string} on Broken Images link")
+	public void validatePageTitleAsBrokenImagesLink(String heading)
+	{
+		BIp.assertHomePageHeading(heading);
+	}
+	
+	@Then("User validates every image present on Broken Images page to check if it broken or not")
+	public void validateBrokenImagesOnBrokenImagesLink()
+	{
+		BIp.getAllBrokenImagesOnBrokenImagesPage();
 	}
 }
