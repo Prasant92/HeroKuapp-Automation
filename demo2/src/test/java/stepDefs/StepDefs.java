@@ -6,6 +6,7 @@ import com.pages.ABTestingPage;
 import com.pages.AddRemoveElementsPage;
 import com.pages.BasicAuthPage;
 import com.pages.BrokenImagesPage;
+import com.pages.CheckboxesPage;
 import com.pages.HomePage;
 
 import io.cucumber.java.en.And;
@@ -27,6 +28,7 @@ public class StepDefs {
 	
 	public BrokenImagesPage BIp=new BrokenImagesPage(driver);
 	
+	public CheckboxesPage CBp=new CheckboxesPage(driver);
 	
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
@@ -158,5 +160,31 @@ public class StepDefs {
 	public void validateBrokenImagesOnBrokenImagesLink()
 	{
 		BIp.getAllBrokenImagesOnBrokenImagesPage();
+	}
+	
+	//************************************************StepDefs for CheckBoxes Page validation**********************************//
+	
+	@And("User clicks on the {string} Checkboxes link")
+	public void userClickOnCheckboxesLink(String s)
+	{
+		CBp.clickOnCheckboxesPageLink();
+	}
+	
+	@Then("User validates the Page title as {string} on Checkboxes link")
+	public void validatePageTitleAsCheckboxesLink(String heading)
+	{
+		CBp.assertTitleOfCheckboxesPage(heading);
+	}
+	
+	@Then("User checks the status of checkboxes and checks the checkbox which is unchecked on Checkboxes page")
+	public void checkTheUncheckedCheckboxesOnCheckboxesPage()
+	{
+		CBp.checksOnCheckboxOnCheckboxesPage();
+	}
+	
+	@Then("User checks the status of checkboxes and unchecks the checkbox which is checked on Checkboxes page")
+	public void uncheckTheCheckedCheckboxesOnCheckboxesPage()
+	{
+		CBp.unchecksOnCheckboxOnCheckboxesPage();
 	}
 }
