@@ -84,6 +84,7 @@ public class CheckboxesPage extends HomePage{
 				e.printStackTrace();
 			}
 		}
+		System.out.println("---------------------------------Step Passed---------------------------------");
 	}
 	
 	public void unchecksOnCheckboxOnCheckboxesPage()
@@ -117,5 +118,6 @@ public class CheckboxesPage extends HomePage{
 				e.printStackTrace();
 			}
 		}
+		System.out.println("---------------------------------Step Passed---------------------------------");
 	}
 }
