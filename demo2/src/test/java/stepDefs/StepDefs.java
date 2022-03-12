@@ -1,14 +1,7 @@
 package stepDefs;
 
+import com.pages.*;
 import org.openqa.selenium.WebDriver;
-
-import com.pages.ABTestingPage;
-import com.pages.AddRemoveElementsPage;
-import com.pages.BasicAuthPage;
-import com.pages.BrokenImagesPage;
-import com.pages.CheckboxesPage;
-import com.pages.ContextMenuPage;
-import com.pages.HomePage;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -32,7 +25,9 @@ public class StepDefs {
 	public CheckboxesPage CBp=new CheckboxesPage(driver);
 	
 	public ContextMenuPage CMp=new ContextMenuPage(driver);
-	
+
+	public DigestAuthPage DAp=new DigestAuthPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -221,5 +216,31 @@ public class StepDefs {
 	public void userReceivesAlertAndAcceptsItOnContextMenuPage()
 	{
 		CMp.acceptContextMenuAlert();
+	}
+
+	//************************************************StepDefs for Digest Authentication Page validation**********************************//
+
+	@And("User clicks on the {string} Digest Auth link")
+	public void userClickOnDigestAuthLink(String s)
+	{
+		DAp.clickOnDigestAuthPageLink();
+	}
+
+	@Then("User accepts the alert by sending the correct credentials for Digest Auth")
+	public void userAcceptAlertOnDigestAuthLink()
+	{
+		DAp.acceptDigestAuthAlertPageLink();
+	}
+
+	@And("User validates the Page title as {string} on Digest Auth link")
+	public void validatePageTitleAsDigestAuthLink(String heading)
+	{
+		DAp.titleOfDigestAuthPage(heading);
+	}
+
+	@And("User validates the Page content as {string} on Digest Auth link")
+	public void validatePageContentOnDigestAuthLink(String heading)
+	{
+		DAp.contentOfDigestAuthPage(heading);
 	}
 }
