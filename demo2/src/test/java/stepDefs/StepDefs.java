@@ -7,6 +7,7 @@ import com.pages.AddRemoveElementsPage;
 import com.pages.BasicAuthPage;
 import com.pages.BrokenImagesPage;
 import com.pages.CheckboxesPage;
+import com.pages.ContextMenuPage;
 import com.pages.HomePage;
 
 import io.cucumber.java.en.And;
@@ -29,6 +30,8 @@ public class StepDefs {
 	public BrokenImagesPage BIp=new BrokenImagesPage(driver);
 	
 	public CheckboxesPage CBp=new CheckboxesPage(driver);
+	
+	public ContextMenuPage CMp=new ContextMenuPage(driver);
 	
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
@@ -186,5 +189,37 @@ public class StepDefs {
 	public void uncheckTheCheckedCheckboxesOnCheckboxesPage()
 	{
 		CBp.unchecksOnCheckboxOnCheckboxesPage();
+	}
+	
+	//************************************************StepDefs for Context Menu Page validation**********************************//
+	
+	@And("User clicks on the {string} Context Menu link")
+	public void userClickOnContextMenuLink(String s)
+	{
+		CMp.clickOnContextMenuPageLink();
+	}
+	
+	@Then("User validates the Page title as {string} on Context Menu link")
+	public void validatePageTitleAsContextMenuLink(String heading)
+	{
+		CMp.assertHomePageHeading(heading);
+	}
+	
+	@Then("User validates the Page content that starts as {string} on Context Menu page")
+	public void validatePageContentOnContextMenuLink(String content)
+	{
+		CMp.contentOfContextMenuPage(content);
+	}
+	
+	@Then("User right clicks on Context Menu page")
+	public void userRightClicksOnContextMenuPage()
+	{
+		CMp.performContextClickActionOnContextMenuPage();
+	}
+	
+	@And("User receives the alert and accepts it on Context Menu page")
+	public void userReceivesAlertAndAcceptsItOnContextMenuPage()
+	{
+		CMp.acceptContextMenuAlert();
 	}
 }
