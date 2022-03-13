@@ -30,6 +30,8 @@ public class StepDefs {
 
 	public DisappearingElementsPage DEp=new DisappearingElementsPage(driver);
 
+	public DragAndDropPage DADp=new DragAndDropPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -246,7 +248,7 @@ public class StepDefs {
 		DAp.contentOfDigestAuthPage(heading);
 	}
 
-	//************************************************StepDefs for Digest Authentication Page validation**********************************//
+	//************************************************StepDefs for Disappearing Elements Page validation**********************************//
 
 	@And("User clicks on the {string} Disappearing Elements link")
 	public void userClickOnDisappearingElementsLink(String s)
@@ -294,5 +296,31 @@ public class StepDefs {
 	public void validateTheBrokenLinksOnTheDisappearingElements()
 	{
 		hp.checkForBrokenLinks();
+	}
+
+	//************************************************StepDefs for Drag And Drop Page validation**********************************//
+
+	@And("User clicks on the {string} Drag And Drop link")
+	public void userClickOnDragAndDropLink(String s)
+	{
+		DADp.clickOnDragAndDropPageLink();
+	}
+
+	@Then("User validates the Page title as {string} on Drag And Drop link")
+	public void validatePageTitleAsDragAndDropLink(String heading)
+	{
+		DADp.titleOfDragAndDropPage(heading);
+	}
+
+	@Then("User performs the Drag and Drop operation from source A box to target B box on Drag And Drop page and validates that Target is {string}")
+	public void performDragAndDropFromAtoB(String expectedTarget)
+	{
+		DADp.performDragAndDropFromAtoB(expectedTarget);
+	}
+
+	@Then("User performs the Drag and Drop operation from source B box to target A box on Drag And Drop page and validates that Target is {string}")
+	public void performDragAndDropFromBtoA(String expectedTarget)
+	{
+		DADp.performDragAndDropFromBtoA(expectedTarget);
 	}
 }
