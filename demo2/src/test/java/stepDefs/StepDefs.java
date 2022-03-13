@@ -32,6 +32,8 @@ public class StepDefs {
 
 	public DragAndDropPage DADp=new DragAndDropPage(driver);
 
+	public DropdownPage DDp=new DropdownPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -322,5 +324,37 @@ public class StepDefs {
 	public void performDragAndDropFromBtoA(String expectedTarget)
 	{
 		DADp.performDragAndDropFromBtoA(expectedTarget);
+	}
+
+	//************************************************StepDefs for Dropdown Page validation**********************************//
+
+	@And("User clicks on the {string} Dropdown link")
+	public void userClickOnDropdownLink(String s)
+	{
+		DDp.clickOnDropdownPageLink();
+	}
+
+	@Then("User validates the Page title as {string} on Dropdown link")
+	public void validatePageTitleAsDropdownLink(String heading)
+	{
+		DDp.titleOfDropdownPage(heading);
+	}
+
+	@Then("User performs the click operation on the Dropdown on Dropdown page")
+	public void performClickOperationOnDropdown()
+	{
+		DDp.clickOnDropdown();
+	}
+
+	@And("User selects the first option from the Dropdown on Dropdown page")
+	public void selectFirstOptionFromDropdownOnDropdownPage()
+	{
+		DDp.selectFirstOptionFromDropdown();
+	}
+
+	@And("User selects the second option from the Dropdown on Dropdown page")
+	public void selectSecondOptionFromDropdownOnDropdownPage()
+	{
+		DDp.selectSecondOptionFromDropdown();
 	}
 }
