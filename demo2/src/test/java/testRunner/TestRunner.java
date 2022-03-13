@@ -14,7 +14,7 @@ import io.cucumber.testng.TestNGCucumberRunner;
 				 glue = {"stepDefs"}, 
 				 plugin = { "pretty","html:target/cucumber-html-report" }, 
 				 monochrome = true, 
-				 tags = "@DragAndDrop_Tests")
+				 tags = "@Dropdown_Tests")
 public class TestRunner {
 	
 	  private TestNGCucumberRunner testngCucumberRunner;
