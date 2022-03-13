@@ -28,6 +28,8 @@ public class StepDefs {
 
 	public DigestAuthPage DAp=new DigestAuthPage(driver);
 
+	public DisappearingElementsPage DEp=new DisappearingElementsPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -242,5 +244,55 @@ public class StepDefs {
 	public void validatePageContentOnDigestAuthLink(String heading)
 	{
 		DAp.contentOfDigestAuthPage(heading);
+	}
+
+	//************************************************StepDefs for Digest Authentication Page validation**********************************//
+
+	@And("User clicks on the {string} Disappearing Elements link")
+	public void userClickOnDisappearingElementsLink(String s)
+	{
+		DEp.clickOnDisappearingElementsPageLink();
+	}
+
+	@And("User validates the Page title as {string} on Disappearing Elements link")
+	public void validatePageTitleAsDisappearingElementsLink(String heading)
+	{
+		DEp.titleOfDisappearingElementsPage(heading);
+	}
+
+	@And("User validates the Page content as {string} on Disappearing Elements link")
+	public void validatePageContentOnDisappearingElementsLink(String heading)
+	{
+		DEp.contentOfDisappearingElementsPage(heading);
+	}
+
+	@Then("User clicks on the About link on the Disappearing Elements link page then verifies the Page content as {string} and navigates back to the Disappearing Elements link page")
+	public void validateAboutLinkContentAndNavigateBackToDisappearingElementsLink(String heading)
+	{
+		DEp.clickOnAboutLinkOfDisappearingElementsPage(heading);
+	}
+
+	@Then("User clicks on the Contact Us link on the Disappearing Elements link page and verifies the Page content as {string} and navigates back to the Disappearing Elements link page")
+	public void validateContactUsLinkContentAndNavigateBackToDisappearingElementsLink(String heading)
+	{
+		DEp.clickOnContactUSLinkOfDisappearingElementsPage(heading);
+	}
+
+	@Then("User clicks on the Portfolio link on the Disappearing Elements link page and verifies the Page content as {string} and navigates back to the Disappearing Elements link page")
+	public void validatePortFolioLinkContentAndNavigateBackToDisappearingElementsLink(String heading)
+	{
+		DEp.clickOnPortfolioLinkOfDisappearingElementsPage(heading);
+	}
+
+	@Then("User clicks on the Home link on the Disappearing Elements link page and verifies the Page content {string} and navigates back to the Disappearing Elements link page")
+	public void validateHomeLinkContentAndNavigateBackToDisappearingElementsLink(String heading)
+	{
+		DEp.clickOnHomeLinkOfDisappearingElementsPage(heading);
+	}
+
+	@Then("Validate the broken links on the Disappearing Elements page")
+	public void validateTheBrokenLinksOnTheDisappearingElements()
+	{
+		hp.checkForBrokenLinks();
 	}
 }

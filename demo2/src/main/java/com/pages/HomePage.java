@@ -23,22 +23,6 @@ public class HomePage extends BaseClass{
 	}
 	
 	By homepage_Header=By.xpath("//*[contains(text(),'Welcome to the-internet')]");
-
-	By BasicAuth_Option=By.xpath("//*[contains(text(),'Basic Auth')]");
-
-	By BrokenImages_Option=By.xpath("//*[contains(text(),'Broken Images')]");
-
-	By ChallengingDOM_Option=By.xpath("//*[contains(text(),'Challenging DOM')]");
-
-	By Checkboxes_Option=By.xpath("//*[contains(text(),'Checkboxes')]");
-
-	By ContextMenu_Option=By.xpath("//*[contains(text(),'Context Menu')]");
-
-	By DigestAuthentication_Option=By.xpath("//*[contains(text(),'Digest Authentication')]");
-	
-	By DisappearingElements_Option=By.xpath("//*[contains(text(),'Disappearing Elements')]");
-	
-	By DragAndDrop_Option=By.xpath("//*[contains(text(),'Drag and Drop')]");
 	
 	public void titleOfWebsite() 
 	{
