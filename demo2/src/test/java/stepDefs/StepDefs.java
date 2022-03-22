@@ -34,6 +34,9 @@ public class StepDefs {
 
 	public DropdownPage DDp=new DropdownPage(driver);
 
+	public DynamicContentPage DCp=new DynamicContentPage(driver);
+
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -356,5 +359,32 @@ public class StepDefs {
 	public void selectSecondOptionFromDropdownOnDropdownPage()
 	{
 		DDp.selectSecondOptionFromDropdown();
+	}
+
+	//************************************************StepDefs for Dropdown Page validation**********************************//
+
+	@And("User clicks on the {string} Dynamic Content link")
+	public void userClickOnDynamicContentLink(String s)
+	{
+		DCp.clickOnDynamicContentLink();
+	}
+
+	@Then("User validates the Page title as {string} on Dynamic Content link")
+	public void validatePageTitleAsDynamicContentLink(String heading)
+	{
+		DCp.titleOfDynamicContentPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on Dynamic Content link")
+	public void validatePageContentAsDynamicContentLink(String content)
+	{
+		DCp.contentOfDynamicContentPage(content);
+	}
+
+	@Then("^User clicks on click here link \"(.*)\" times and capturing the image and its description everytime$")
+	public void validatePageDetailsByClickingNTimesOnDynamicContentLink(String s)
+	{
+		int i=Integer.parseInt(s);
+		DCp.clickToChangePageContentOfDynamicContentPage(i);
 	}
 }
