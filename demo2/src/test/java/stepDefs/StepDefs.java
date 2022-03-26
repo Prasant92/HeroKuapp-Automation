@@ -36,6 +36,8 @@ public class StepDefs {
 
 	public DynamicContentPage DCp=new DynamicContentPage(driver);
 
+	public DynamicControlsPage DCop=new DynamicControlsPage(driver);
+
 
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
@@ -361,7 +363,7 @@ public class StepDefs {
 		DDp.selectSecondOptionFromDropdown();
 	}
 
-	//************************************************StepDefs for Dropdown Page validation**********************************//
+	//************************************************StepDefs for Dynamic Content Page validation**********************************//
 
 	@And("User clicks on the {string} Dynamic Content link")
 	public void userClickOnDynamicContentLink(String s)
@@ -386,5 +388,91 @@ public class StepDefs {
 	{
 		int i=Integer.parseInt(s);
 		DCp.clickToChangePageContentOfDynamicContentPage(i);
+	}
+
+	//************************************************StepDefs for Dynamic Controls Page validation**********************************//
+
+	@And("User clicks on the {string} Dynamic Controls link")
+	public void userClickOnDynamicControlsLink(String s)
+	{
+		DCop.clickOnDynamicControlsLink();
+	}
+
+	@Then("User validates the Page title as {string} on Dynamic Controls link")
+	public void validatePageTitleAsDynamicControlsLink(String heading)
+	{
+		DCop.titleOfDynamicControlsPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on Dynamic Controls link")
+	public void validatePageContentAsDynamicControlsLink(String content)
+	{
+		DCop.contentOfDynamicControlsPage(content);
+	}
+
+	@And("User clicks on Remove button without ticking the checkbox")
+	public void clickRemoveButtonWithoutTickingCheckbox()
+	{
+		DCop.clickingRemoveOrAddButtonOnDynamicControlsPage();
+	}
+
+	@Then("User validates the {string} message")
+	public void validateMessageOnClickingAddOrRemoveButton(String message)
+	{
+		DCop.validateMessageAfterClickingRemoveOrAddButtonOnDynamicControlsPage(message);
+	}
+
+	@And("User ticks on the Checkbox")
+	public void userTicksOnCheckbox()
+	{
+		DCop.clickingCheckBoxOnDynamicControlsPage();
+	}
+
+	@And("User clicks on Remove button after ticking the checkbox")
+	public void userClicksRemoveButtonAfterTickingCheckbox()
+	{
+		DCop.clickingRemoveOrAddButtonOnDynamicControlsPage();
+	}
+
+	@And("User clicks on Add button")
+	public void userClicksAddButton()
+	{
+		DCop.clickingRemoveOrAddButtonOnDynamicControlsPage();
+	}
+
+	@And("User clicks on Enable button")
+	public void userClicksEnableButton()
+	{
+		DCop.clickingEnableOrDisableButtonOnDynamicControlsPage();
+	}
+
+	@And("User verifies the status as {string}")
+	public void userValidatesStatusAfterClickingEnableOrDisableButtons(String message)
+	{
+		DCop.validateMessageAfterClickingEnableOrDisableButtonOnDynamicControlsPage(message);
+	}
+
+	@Then("User populates desired text {string} into textbox")
+	public void userPopulatesContentIntoTextBox(String text)
+	{
+		DCop.enteringTextIntoInputBoxOnDynamicControlsPage(text);
+	}
+
+	@And("User clicks on the Disable button")
+	public void userClicksDisableButton()
+	{
+		DCop.clickingEnableOrDisableButtonOnDynamicControlsPage();
+	}
+
+	@Then("^User performs the removal and addition of checkbox multiple times by ticking the checkbox \"(.*)\" times$")
+	public void performRemovalAndAdditionOfCheckboxMultipleTimes(String s)
+	{
+		int i=Integer.parseInt(s);
+		for(int j=1;j<=i+1;j++)
+		{
+			DCop.clickingCheckBoxOnDynamicControlsPage();
+			DCop.clickingRemoveOrAddButtonOnDynamicControlsPage();
+			DCop.clickingRemoveOrAddButtonOnDynamicControlsPage();
+		}
 	}
 }
