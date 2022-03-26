@@ -38,6 +38,8 @@ public class StepDefs {
 
 	public DynamicControlsPage DCop=new DynamicControlsPage(driver);
 
+	public DynamicLoadingPage DLp=new DynamicLoadingPage(driver);
+
 
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
@@ -474,5 +476,75 @@ public class StepDefs {
 			DCop.clickingRemoveOrAddButtonOnDynamicControlsPage();
 			DCop.clickingRemoveOrAddButtonOnDynamicControlsPage();
 		}
+	}
+
+	//************************************************StepDefs for Dynamic Loading Page validation**********************************//
+
+	@And("User clicks on the {string} Dynamic Loading link")
+	public void userClickOnDynamicLoadingLink(String s)
+	{
+		DLp.clickOnDynamicLoadingLink();
+	}
+
+	@Then("User validates the Page title as {string} on Dynamic Loading link")
+	public void validatePageTitleAsDynamicLoadingLink(String heading)
+	{
+		DLp.titleOfDynamicLoadingPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on Dynamic Loading link")
+	public void validatePageContentAsDynamicLoadingLink(String content)
+	{
+		DLp.contentOfDynamicLoadingPage(content);
+	}
+
+	@Then ("User clicks on the {string} Example 1 link on Dynamically Loaded Page Elements page")
+	public void userClickOnExample1LinkOnOnDynamicLoadingPage(String s)
+	{
+		DLp.clickOnExample1LinkOfDynamicLoadingPage();
+	}
+
+	@Then("User validates the Page title as {string} on Example 1 of Dynamic Loading link")
+	public void validatePageTitleOnExample1OnDynamicLoadingPage(String heading)
+	{
+		DLp.titleOfExample1PageOfDynamicLoadingPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on Example 1 of Dynamic Loading link")
+	public void validatePageContentOnExample1OnDynamicLoadingPage(String content)
+	{
+		DLp.contentOfExample1PageOfDynamicLoadingPage(content);
+	}
+
+	@Then ("User clicks on the {string} Example 2 link on Dynamically Loaded Page Elements page")
+	public void userClickOnExample2LinkOnOnDynamicLoadingPage(String s)
+	{
+		DLp.clickOnExample2LinkOfDynamicLoadingPage();
+	}
+
+	@Then("User validates the Page title as {string} on Example 2 of Dynamic Loading link")
+	public void validatePageTitleOnExample2OnDynamicLoadingPage(String heading)
+	{
+		DLp.titleOfExample2PageOfDynamicLoadingPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on Example 2 of Dynamic Loading link")
+	public void validatePageContentOnExample2OnDynamicLoadingPage(String content)
+	{
+		DLp.contentOfExample2PageOfDynamicLoadingPage(content);
+	}
+
+	@Then("User clicks Start button and validates the text as {string} on Example 1 of Dynamic Loading link")
+	public void clickStartButtonAndValidateTextOnExample1OnDynamicLoadingPage(String text)
+	{
+		DLp.clickOnStartButtonOnExample1AndExample2PagesOfDynamicLoadingPage();
+		DLp.validateTextOnExample1PagesAfterClickingStartButton(text);
+	}
+
+	@Then("User clicks Start button and validates the text as {string} on Example 2 of Dynamic Loading link")
+	public void clickStartButtonAndValidateTextOnExample2OnDynamicLoadingPage(String text)
+	{
+		DLp.clickOnStartButtonOnExample1AndExample2PagesOfDynamicLoadingPage();
+		DLp.validateTextOnExample2PagesAfterClickingStartButton(text);
 	}
 }
