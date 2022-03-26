@@ -12,7 +12,7 @@ import io.cucumber.testng.TestNGCucumberRunner;
 
 @CucumberOptions(features = { "src/test/java/com/test_Cases_FeatureFiles" }, 
 				 glue = {"stepDefs"}, 
-				 plugin = { "pretty","html:target/cucumber-html-report" }, 
+				 plugin = { "pretty","html:target/cucumber-html-report","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, 
 				 monochrome = true, 
 				 tags = "@DynamicContent_Tests")
 public class TestRunner {
