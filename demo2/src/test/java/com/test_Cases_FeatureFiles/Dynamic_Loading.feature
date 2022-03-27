@@ -16,7 +16,7 @@ Feature: To verify the different functionalities present on the Dynamic Loading 
     Then User validates the Page title as "Dynamically Loaded Page Elements" on Dynamic Loading link
     And Close the browser session
 
-  Scenario: To verify that user is successfully able to validate the Dynamic Controls page content
+  Scenario: To verify that user is successfully able to validate the Dynamic Loading page content
     Given Start "Firefox" browser and launch the website "https://the-internet.herokuapp.com/"
     When User is on the homePage of the website
     Then Validate that heading of the homepage is "Welcome to the-internet"
@@ -24,7 +24,7 @@ Feature: To verify the different functionalities present on the Dynamic Loading 
     Then User validates the Page content as "It's common to see an action get triggered that returns a " on Dynamic Loading link
     And Close the browser session
 
-  Scenario: To validate whether there any broken links on the Dynamic Controls page
+  Scenario: To validate whether there any broken links on the Dynamic Loading page
     Given Start "Firefox" browser and launch the website "https://the-internet.herokuapp.com/"
     When User is on the homePage of the website
     Then Validate that heading of the homepage is "Welcome to the-internet"
