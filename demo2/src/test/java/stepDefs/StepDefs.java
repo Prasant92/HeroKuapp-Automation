@@ -40,6 +40,8 @@ public class StepDefs {
 
 	public DynamicLoadingPage DLp=new DynamicLoadingPage(driver);
 
+	public EntryAdPage EAp=new EntryAdPage(driver);
+
 
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
@@ -547,4 +549,49 @@ public class StepDefs {
 		DLp.clickOnStartButtonOnExample1AndExample2PagesOfDynamicLoadingPage();
 		DLp.validateTextOnExample2PagesAfterClickingStartButton(text);
 	}
+
+	//************************************************StepDefs for Entry Ad Page validation**********************************//
+
+	@And("User clicks on the {string} Entry Ad link")
+	public void userClickOnEntryAdLink(String s)
+	{
+		EAp.clickOnEntryAdLink();
+	}
+
+	@Then("User validates the Page title as {string} on Entry Ad link")
+	public void validatePageTitleAsEntryAdLink(String heading)
+	{
+		EAp.titleOfEntryAdPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on Entry Ad link")
+	public void validatePageContentAsEntryAdLink(String content)
+	{
+		EAp.contentOfEntryAdPage(content);
+	}
+
+	@Then("User clicks on Close link on Modal Window on Entry Ad link")
+	public void clickCloseLinkOnModalWindowOfEntryAdLink()
+	{
+		EAp.clickOnCloseLinkOnModalWindow();
+	}
+
+	@Then("User validates the Page title as {string} on Modal Window")
+	public void validatePageTitleOnModalWindowOfEntryAdLink(String heading)
+	{
+		EAp.titleOfModalWindowOnEntryAdPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on Modal Window")
+	public void validatePageContentOnModalWindowOfEntryAdLink(String content)
+	{
+		EAp.contentOfModalWindowOnEntryAdPage(content);
+	}
+
+	@Then("User clicks on {string} link on on Entry Ad link")
+	public void userClickOnClickHereOnEntryAdLink(String s)
+	{
+		EAp.clickOnClickHereLinkOnEntryAdPage();
+	}
+
 }
