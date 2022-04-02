@@ -14,7 +14,7 @@ import io.cucumber.testng.TestNGCucumberRunner;
 				 glue = {"stepDefs"}, 
 				 plugin = { "pretty","html:target/cucumber-html-report","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, 
 				 monochrome = true, 
-				 tags = "@EntryAd_Tests")
+				 tags = "@ExitIntent_Tests")
 public class TestRunner {
 	
 	  private TestNGCucumberRunner testngCucumberRunner;
