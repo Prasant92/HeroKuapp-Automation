@@ -42,6 +42,7 @@ public class StepDefs {
 
 	public EntryAdPage EAp=new EntryAdPage(driver);
 
+	public ExitIntentPage EIp=new ExitIntentPage(driver);
 
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
@@ -592,6 +593,26 @@ public class StepDefs {
 	public void userClickOnClickHereOnEntryAdLink(String s)
 	{
 		EAp.clickOnClickHereLinkOnEntryAdPage();
+	}
+
+	//************************************************StepDefs for Entry Ad Page validation**********************************//
+
+	@And("User clicks on the {string} Exit Intent link")
+	public void userClickOnExitIntentLink(String s)
+	{
+		EIp.clickOnExitIntentLink();
+	}
+
+	@Then("User validates the Page title as {string} on Exit Intent link")
+	public void validatePageTitleAsExitIntentLink(String heading)
+	{
+		EIp.titleOfExitIntentPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on Exit Intent link")
+	public void validatePageContentAsExitIntentLink(String content)
+	{
+		EIp.contentOfExitIntentPage(content);
 	}
 
 }
