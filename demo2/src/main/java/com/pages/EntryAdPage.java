@@ -114,8 +114,6 @@ public class EntryAdPage extends HomePage {
 
     public void clickOnCloseLinkOnModalWindow()
     {
-        if(driver.findElement(clickCloseButtonOnModalWindow).isEnabled())
-        {
             try {
                 Thread.sleep(5000);
                 driver.findElement(clickCloseButtonOnModalWindow).click();
@@ -124,6 +122,5 @@ public class EntryAdPage extends HomePage {
                 e.printStackTrace();
             }
             System.out.println("---------------------------------Step Passed---------------------------------");
-        }
     }
 }
