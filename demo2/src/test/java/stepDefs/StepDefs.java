@@ -44,6 +44,8 @@ public class StepDefs {
 
 	public ExitIntentPage EIp=new ExitIntentPage(driver);
 
+	public FileDownloadPage FDp=new FileDownloadPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -595,7 +597,7 @@ public class StepDefs {
 		EAp.clickOnClickHereLinkOnEntryAdPage();
 	}
 
-	//************************************************StepDefs for Entry Ad Page validation**********************************//
+	//************************************************StepDefs for Exit intent Page validation**********************************//
 
 	@And("User clicks on the {string} Exit Intent link")
 	public void userClickOnExitIntentLink(String s)
@@ -615,4 +617,35 @@ public class StepDefs {
 		EIp.contentOfExitIntentPage(content);
 	}
 
+	//************************************************StepDefs for File Download Page validation**********************************//
+
+	@And("User clicks on the {string} File Download link")
+	public void userClickOnFileDownloadLink(String s)
+	{
+		FDp.clickOnFileDownloadLink();
+	}
+
+	@Then("User validates the Page title as {string} on File Download link")
+	public void validatePageTitleAsFileDownloadLink(String heading)
+	{
+		FDp.titleOfFileDownloadPage(heading);
+	}
+
+	@Then("^User clicks on the \"([^\"]*)\" on File Download link$")
+	public void userClicksOnDownloadLink(String downloadLink)
+	{
+		FDp.downloadSelectedFile(downloadLink);
+	}
+
+	@Then("^User verifies the \"([^\"]*)\" in the filepath")
+	public void userVerifiesDownloadFileAtDownloadedLocation(String Filename)
+	{
+		FDp.verifyDownloadedFile(Filename);
+	}
+
+	@Then("Validate the broken links on the File Download Page")
+	public void validateTheBrokenLinksOnTheFileDownloadPage()
+	{
+		FDp.checkForBrokenLinks();
+	}
 }

@@ -166,8 +166,8 @@ public class DynamicLoadingPage extends HomePage {
             String text2=driver.findElement(validateTextAfterCLickingStartButtonOnExample1AndExample2Pages).getText();
             Assert.assertEquals(text1, text2,"Text assertion is not successful on Example1/2 page of Dynamic Loading Page after clicking on Start button");
             Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
         }
         System.out.println("---------------------------------Step Passed---------------------------------");
     }
