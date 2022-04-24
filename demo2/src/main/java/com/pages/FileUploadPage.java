@@ -47,7 +47,7 @@ public class FileUploadPage extends HomePage{
         try {
             Thread.sleep(5000);
             String heading2=driver.findElement(pageTitle).getText();
-            Assert.assertEquals(heading1, heading2,"File Uploader");
+            Assert.assertEquals(heading1, heading2,"Page title assertion is not successful on File Uploader page");
             System.out.println("---------------------------------Step Passed---------------------------------");
         } catch (Exception e) {
             e.printStackTrace();
@@ -93,7 +93,7 @@ public class FileUploadPage extends HomePage{
         {
             e.printStackTrace();
         }
-
+        System.out.println("---------------------------------Step Passed---------------------------------");
     }
 
     public static void DropFile(File filePath, WebElement target, int offsetX, int offsetY) throws InterruptedException {

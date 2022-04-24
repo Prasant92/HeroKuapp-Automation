@@ -31,7 +31,7 @@ Feature: To verify the different functionalities present on the File Upload page
     And User clicks on the "File Upload" File Upload link
     Then User uploads the required files on File Upload page by clicking on Choose file button
     And Close the browser session
-@PB
+
   Scenario: To verify that user is successfully able to upload the required files by using drag and drop functionality on File Upload page
     Given Start "Firefox" browser and launch the website "https://the-internet.herokuapp.com/"
     When User is on the homePage of the website

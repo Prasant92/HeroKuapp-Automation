@@ -8,6 +8,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.awt.*;
+
 public class StepDefs {
 
 	public static WebDriver driver;
@@ -47,6 +49,8 @@ public class StepDefs {
 	public FileDownloadPage FDp=new FileDownloadPage(driver);
 
 	public FileUploadPage FUp=new FileUploadPage(driver);
+
+	public FloatingMenuPage FMp=new FloatingMenuPage(driver);
 
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
@@ -681,5 +685,53 @@ public class StepDefs {
 	public void uploadFilesUsingDragAndDropFunctionalityButtonOnFileUploadPage()
 	{
 		FUp.uploadFileUsingDragAndDropFeature();
+	}
+
+	//************************************************StepDefs for File Upload Page validation**********************************//
+
+	@And("User clicks on the {string} Floating Menu link")
+	public void userClickOnFloatingMenuLink(String s)
+	{
+		FMp.clickOnFloatingMenuLink();
+	}
+
+	@Then("User validates the Page title as {string} on Floating Menu link")
+	public void validatePageTitleAsFloatingMenuLink(String heading)
+	{
+		FMp.titleOfFloatingMenuPage(heading);
+	}
+
+	@Then("User scrolls down to the bottom of the Floating Menu page")
+	public void scrollToBottomOfFloatingMenuLink() throws AWTException {
+		FMp.scrollFloatingMenuPageToBottom();
+	}
+
+	@Then("User scrolls up to the top from bottom of the Floating Menu page")
+	public void scrollToTopFromBottomOfFloatingMenuLink() throws AWTException {
+		FMp.scrollFloatingMenuFromBottomToTop();
+	}
+
+	@Then("User clicks and asserts the Home menu URL as {string} on Floating Menu page")
+	public void clickAndAssertHomeMenuURLAOnFloatingMenuLink(String home)
+	{
+		FMp.clickAndAssertHomeMenuButton(home);
+	}
+
+	@Then("User clicks and asserts the News menu URL as {string} on Floating Menu page")
+	public void clickAndAssertNewsMenuURLAOnFloatingMenuLink(String news)
+	{
+		FMp.clickAndAssertNewsMenuButton(news);
+	}
+
+	@Then("User clicks and asserts the Contact menu URL as {string} on Floating Menu page")
+	public void clickAndAssertContactMenuURLAOnFloatingMenuLink(String contact)
+	{
+		FMp.clickAndAssertContactMenuButton(contact);
+	}
+
+	@Then("User clicks and asserts the About menu URL as {string} on Floating Menu page")
+	public void clickAndAssertAboutMenuURLAOnFloatingMenuLink(String about)
+	{
+		FMp.clickAndAssertAboutMenuButton(about);
 	}
 }
