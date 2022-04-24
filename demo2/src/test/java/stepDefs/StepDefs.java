@@ -46,6 +46,8 @@ public class StepDefs {
 
 	public FileDownloadPage FDp=new FileDownloadPage(driver);
 
+	public FileUploadPage FUp=new FileUploadPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -647,5 +649,37 @@ public class StepDefs {
 	public void validateTheBrokenLinksOnTheFileDownloadPage()
 	{
 		FDp.checkForBrokenLinks();
+	}
+
+	//************************************************StepDefs for File Upload Page validation**********************************//
+
+	@And("User clicks on the {string} File Upload link")
+	public void userClickOnFileUploadLink(String s)
+	{
+		FUp.clickOnFileUploadLink();
+	}
+
+	@Then("User validates the Page title as {string} on File Upload link")
+	public void validatePageTitleAsFileUploadLink(String heading)
+	{
+		FUp.titleOfFileUploadPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on File Upload link")
+	public void validatePageContentAsFileUploadLink(String content)
+	{
+		FUp.contentOfFileUploadPage(content);
+	}
+
+	@Then("User uploads the required files on File Upload page by clicking on Choose file button")
+	public void uploadFilesUsingChooseFileButtonOnFileUploadPage()
+	{
+		FUp.uploadFileOnFileUploadPageLink();
+	}
+
+	@Then("User uploads the required files on File Upload page by using drag and drop functionality")
+	public void uploadFilesUsingDragAndDropFunctionalityButtonOnFileUploadPage()
+	{
+		FUp.uploadFileUsingDragAndDropFeature();
 	}
 }
