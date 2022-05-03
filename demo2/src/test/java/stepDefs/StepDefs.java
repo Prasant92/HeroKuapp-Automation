@@ -52,6 +52,8 @@ public class StepDefs {
 
 	public FloatingMenuPage FMp=new FloatingMenuPage(driver);
 
+	public ForgotPasswordPage FPp=new ForgotPasswordPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -687,7 +689,7 @@ public class StepDefs {
 		FUp.uploadFileUsingDragAndDropFeature();
 	}
 
-	//************************************************StepDefs for File Upload Page validation**********************************//
+	//************************************************StepDefs for Floating Menu Page validation**********************************//
 
 	@And("User clicks on the {string} Floating Menu link")
 	public void userClickOnFloatingMenuLink(String s)
@@ -733,5 +735,31 @@ public class StepDefs {
 	public void clickAndAssertAboutMenuURLAOnFloatingMenuLink(String about)
 	{
 		FMp.clickAndAssertAboutMenuButton(about);
+	}
+
+	//************************************************StepDefs for Floating Menu Page validation**********************************//
+
+	@And("User clicks on the {string} Forgot Password link")
+	public void userClickOnForgotPasswordLink(String s)
+	{
+		FPp.clickOnForgotPasswordLink();
+	}
+
+	@Then("User validates the Page title as {string} on Forgot Password link")
+	public void validatePageTitleAsForgotPasswordLink(String heading)
+	{
+		FPp.titleOfForgotPasswordPage(heading);
+	}
+
+	@Then("^User populates different sets of \"([^\"]*)\"$")
+	public void populateDifferentSetsOfEmailIDOnForgotPasswordPage(String emailID)
+	{
+		FPp.populateEmailIDOnForgotPasswordPage(emailID);
+	}
+
+	@Then("User clicks on the retrieve password button")
+	public void clickRetrievePasswordOnForgotPasswordLink()
+	{
+		FPp.clickRetrievePasswordOnForgotPasswordPage();
 	}
 }
