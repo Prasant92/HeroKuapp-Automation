@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Build 1</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">May 3, 2022 03:29:41 PM</span></a>
+<a href="#"><span class="badge badge-primary">May 8, 2022 01:03:47 AM</span></a>
 </li>
 </ul>
 </div>
@@ -79,7 +79,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@ForgotPassword_Tests</a>
+<a class="dropdown-item" href="#">@FormAuthentication_Tests</a>
 </ul>
 </li>
 </ul>
@@ -90,9 +90,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">To verify the different functionalities present on the Forgot Password page of Herokuapp website</p>
+            <p class="name">To verify the different functionalities present on the Form Authentication page of Herokuapp website</p>
             <p class="text-sm">
-              <span>3:29:42 PM</span> / <span>00:02:44:315</span>
+              <span>1:03:48 AM</span> / <span>00:06:07:887</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -100,10 +100,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">To verify the different functionalities present on the Forgot Password page of Herokuapp website</h5>
-<span class='badge badge-success'>05.03.2022 3:29:42 PM</span>
-<span class='badge badge-danger'>05.03.2022 3:32:26 PM</span>
-<span class='badge badge-default'>00:02:44:315</span>
+<h5 class="test-status text-pass">To verify the different functionalities present on the Form Authentication page of Herokuapp website</h5>
+<span class='badge badge-success'>05.08.2022 1:03:48 AM</span>
+<span class='badge badge-danger'>05.08.2022 1:09:56 AM</span>
+<span class='badge badge-default'>00:06:07:887</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -115,7 +115,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>To verify that Forgot Password option is enabled and clickable</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>To verify that Exit Intent option is enabled and clickable</div>
       </div>
     </div>
         <div class="collapse">
@@ -135,8 +135,8 @@
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefs.StepDefs.userClickOnForgotPasswordLink(java.lang.String)">
-                <span>And User clicks on the "Forgot Password" Forgot Password link</span>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userClickOnFormAuthenticationLink(java.lang.String)">
+                <span>And User clicks on the "Form Authentication" Form Authentication link</span>
       <div>
       </div>
               </div>
@@ -151,7 +151,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="8"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to validate the Forgot Password page title</div>
+        <div class="node" id="8"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to validate the Form Authentication page title</div>
       </div>
     </div>
         <div class="collapse">
@@ -171,13 +171,13 @@
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefs.StepDefs.userClickOnForgotPasswordLink(java.lang.String)">
-                <span>And User clicks on the "Forgot Password" Forgot Password link</span>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userClickOnFormAuthenticationLink(java.lang.String)">
+                <span>And User clicks on the "Form Authentication" Form Authentication link</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefs.StepDefs.validatePageTitleAsForgotPasswordLink(java.lang.String)">
-                <span>Then User validates the Page title as "Forgot Password" on Forgot Password link</span>
+              <div class="step pass-bg" title="stepDefs.StepDefs.validatePageTitleAsFormAuthenticationLink(java.lang.String)">
+                <span>Then User validates the Page title as "Login Page" on Form Authentication link</span>
       <div>
       </div>
               </div>
@@ -192,14 +192,55 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="15"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to validate the result while performing Forgot Password process</div>
+        <div class="node" id="15"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to validate the Form Authentication page content</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefs.StepDefs.launchTheWebsite(java.lang.String,java.lang.String)">
+                <span>Given Start "Firefox" browser and launch the website "https://the-internet.herokuapp.com/"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userIsOnTheHomePageOfTheWebsite()">
+                <span>When User is on the homePage of the website</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.validateThatHeadingOfTheHomepage(java.lang.String)">
+                <span>Then Validate that heading of the homepage is "Welcome to the-internet"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userClickOnFormAuthenticationLink(java.lang.String)">
+                <span>And User clicks on the "Form Authentication" Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.validatePageContentAsFormAuthenticationLink(java.lang.String)">
+                <span>Then User validates the Page content as "This is where you can log into the secure area. Enter tomsmith for the username and SuperSecretPassword! for the password. If the information is wrong you should see error messages." on Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.closeTheBrowserSession()">
+                <span>And Close the browser session</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="22"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to validate the error message for different combinations of username and password</div>
       </div>
     </div>
         <div class="scenario_outline collapse">
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="16"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to validate the result while performing Forgot Password process</div>
+                  <div class="node" id="23"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to validate the error message for different combinations of username and password</div>
                 </div>
               </div>
               <div class="card-body mt-3 collapse">
@@ -219,17 +260,27 @@
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>And User clicks on the "Forgot Password" Forgot Password link</span>
+                    <span>And User clicks on the "Form Authentication" Form Authentication link</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Then User populates different sets of "prasantbhagavatula92@gmail.com"</span>
+                    <span>Then User populates the username "tomsmith" on the Form Authentication link</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Then User clicks on the retrieve password button</span>
+                    <span>Then User populates the password "SuperSecretPassword" on the Form Authentication link</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then User clicks on the login button on the Form Authentication link</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then User validates the "Your password is invalid!"</span>
       <div>
       </div>
                   </div>
@@ -243,7 +294,7 @@
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="24"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to validate the result while performing Forgot Password process</div>
+                  <div class="node" id="33"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to validate the error message for different combinations of username and password</div>
                 </div>
               </div>
               <div class="card-body mt-3 collapse">
@@ -263,17 +314,27 @@
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>And User clicks on the "Forgot Password" Forgot Password link</span>
+                    <span>And User clicks on the "Form Authentication" Form Authentication link</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Then User populates different sets of "123_123@xyz.com"</span>
+                    <span>Then User populates the username "tomSmith" on the Form Authentication link</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Then User clicks on the retrieve password button</span>
+                    <span>Then User populates the password "SuperSecretPassword!" on the Form Authentication link</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then User clicks on the login button on the Form Authentication link</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then User validates the "Your username is invalid!"</span>
       <div>
       </div>
                   </div>
@@ -287,7 +348,7 @@
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="32"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to validate the result while performing Forgot Password process</div>
+                  <div class="node" id="43"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to validate the error message for different combinations of username and password</div>
                 </div>
               </div>
               <div class="card-body mt-3 collapse">
@@ -307,17 +368,27 @@
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>And User clicks on the "Forgot Password" Forgot Password link</span>
+                    <span>And User clicks on the "Form Authentication" Form Authentication link</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Then User populates different sets of "qwerty123@xyz.com"</span>
+                    <span>Then User populates the username "12345678" on the Form Authentication link</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Then User clicks on the retrieve password button</span>
+                    <span>Then User populates the password "qwerty" on the Form Authentication link</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then User clicks on the login button on the Form Authentication link</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then User validates the "Your username is invalid!"</span>
       <div>
       </div>
                   </div>
@@ -331,7 +402,7 @@
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="40"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to validate the result while performing Forgot Password process</div>
+                  <div class="node" id="53"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to validate the error message for different combinations of username and password</div>
                 </div>
               </div>
               <div class="card-body mt-3 collapse">
@@ -351,17 +422,27 @@
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>And User clicks on the "Forgot Password" Forgot Password link</span>
+                    <span>And User clicks on the "Form Authentication" Form Authentication link</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Then User populates different sets of "123qwerty"</span>
+                    <span>Then User populates the username "" on the Form Authentication link</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Then User clicks on the retrieve password button</span>
+                    <span>Then User populates the password "" on the Form Authentication link</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then User clicks on the login button on the Form Authentication link</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then User validates the "Your username is invalid!"</span>
       <div>
       </div>
                   </div>
@@ -372,6 +453,235 @@
                   </div>
               </div>
             </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="63"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to login using the correct credentials on Form Authentication page content</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefs.StepDefs.launchTheWebsite(java.lang.String,java.lang.String)">
+                <span>Given Start "Firefox" browser and launch the website "https://the-internet.herokuapp.com/"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userIsOnTheHomePageOfTheWebsite()">
+                <span>When User is on the homePage of the website</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.validateThatHeadingOfTheHomepage(java.lang.String)">
+                <span>Then Validate that heading of the homepage is "Welcome to the-internet"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userClickOnFormAuthenticationLink(java.lang.String)">
+                <span>And User clicks on the "Form Authentication" Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.usernameOnFormAuthenticationLink(java.lang.String)">
+                <span>Then User populates "tomsmith" as username on the Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.passwordOnFormAuthenticationLink(java.lang.String)">
+                <span>Then User populates "SuperSecretPassword!" as password on the Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userClicksLoginButtonOnFormAuthenticationLink()">
+                <span>Then User clicks on the login button on the Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userValidatesSuccessMessageOnFormAuthenticationLink(java.lang.String)">
+                <span>Then User validates the success message "You logged into a secure area!" on Secure Area Page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.closeTheBrowserSession()">
+                <span>And Close the browser session</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="73"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to validate the Secure Area page title</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefs.StepDefs.launchTheWebsite(java.lang.String,java.lang.String)">
+                <span>Given Start "Firefox" browser and launch the website "https://the-internet.herokuapp.com/"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userIsOnTheHomePageOfTheWebsite()">
+                <span>When User is on the homePage of the website</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.validateThatHeadingOfTheHomepage(java.lang.String)">
+                <span>Then Validate that heading of the homepage is "Welcome to the-internet"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userClickOnFormAuthenticationLink(java.lang.String)">
+                <span>And User clicks on the "Form Authentication" Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.usernameOnFormAuthenticationLink(java.lang.String)">
+                <span>Then User populates "tomsmith" as username on the Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.passwordOnFormAuthenticationLink(java.lang.String)">
+                <span>Then User populates "SuperSecretPassword!" as password on the Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userClicksLoginButtonOnFormAuthenticationLink()">
+                <span>Then User clicks on the login button on the Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.validatePageTitleOnSecureAreaPageLink(java.lang.String)">
+                <span>Then User validates the Page title as "Secure Area" on Secure Area page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.closeTheBrowserSession()">
+                <span>And Close the browser session</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="83"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to validate the Secure Area page content</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefs.StepDefs.launchTheWebsite(java.lang.String,java.lang.String)">
+                <span>Given Start "Firefox" browser and launch the website "https://the-internet.herokuapp.com/"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userIsOnTheHomePageOfTheWebsite()">
+                <span>When User is on the homePage of the website</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.validateThatHeadingOfTheHomepage(java.lang.String)">
+                <span>Then Validate that heading of the homepage is "Welcome to the-internet"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userClickOnFormAuthenticationLink(java.lang.String)">
+                <span>And User clicks on the "Form Authentication" Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.usernameOnFormAuthenticationLink(java.lang.String)">
+                <span>Then User populates "tomsmith" as username on the Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.passwordOnFormAuthenticationLink(java.lang.String)">
+                <span>Then User populates "SuperSecretPassword!" as password on the Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userClicksLoginButtonOnFormAuthenticationLink()">
+                <span>Then User clicks on the login button on the Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.validatePageContentOnSecureAreaPageLink(java.lang.String)">
+                <span>Then User validates the Page content as "Welcome to the Secure Area. When you are done click logout below." on Secure Area page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.closeTheBrowserSession()">
+                <span>And Close the browser session</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="93"><span class="badge log pass-bg mr-2">Pass</span>To verify that user is successfully able to logout of the Secure Area page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefs.StepDefs.launchTheWebsite(java.lang.String,java.lang.String)">
+                <span>Given Start "Firefox" browser and launch the website "https://the-internet.herokuapp.com/"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userIsOnTheHomePageOfTheWebsite()">
+                <span>When User is on the homePage of the website</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.validateThatHeadingOfTheHomepage(java.lang.String)">
+                <span>Then Validate that heading of the homepage is "Welcome to the-internet"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userClickOnFormAuthenticationLink(java.lang.String)">
+                <span>And User clicks on the "Form Authentication" Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.usernameOnFormAuthenticationLink(java.lang.String)">
+                <span>Then User populates "tomsmith" as username on the Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.passwordOnFormAuthenticationLink(java.lang.String)">
+                <span>Then User populates "SuperSecretPassword!" as password on the Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userClicksLoginButtonOnFormAuthenticationLink()">
+                <span>Then User clicks on the login button on the Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.clickLogoutButtonOnSecureAreaPageLink()">
+                <span>Then User clicks on the logout button the Secure Area page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.userValidatesSuccessMessageOnSecureAreaPage(java.lang.String)">
+                <span>Then User validates the "You logged out of the secure area!" on Form Authentication link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.StepDefs.closeTheBrowserSession()">
+                <span>And Close the browser session</span>
+      <div>
+      </div>
+              </div>
+          </div>
         </div>
   </div>
 </div>
@@ -397,15 +707,15 @@
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>7</span>
+<span class='badge log pass-bg'>12</span>
 </span>
-<p class="name">@ForgotPassword_Tests</p>
-<p class="duration text-sm">7 tests</p>
+<p class="name">@FormAuthentication_Tests</p>
+<p class="duration text-sm">12 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@ForgotPassword_Tests</h4>
-<span status="pass" class='badge log pass-bg'>7 passed</span>
+<h4>@FormAuthentication_Tests</h4>
+<span status="pass" class='badge log pass-bg'>12 passed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -418,71 +728,121 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>15:29:42 PM</td>
+<td>01:03:48 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>To verify that Forgot Password option is enabled and clickable</a>
+<a href="#" class="linked" test-id='1' id='2'>To verify that Exit Intent option is enabled and clickable</a>
 <div class="">
-<span class="badge badge-default">To verify the different functionalities present on the Forgot Password page of Herokuapp website.To verify that Forgot Password option is enabled and clickable</span>
+<span class="badge badge-default">To verify the different functionalities present on the Form Authentication page of Herokuapp website.To verify that Exit Intent option is enabled and clickable</span>
 </div>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>15:30:04 PM</td>
+<td>01:04:10 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='8'>To verify that user is successfully able to validate the Forgot Password page title</a>
+<a href="#" class="linked" test-id='1' id='8'>To verify that user is successfully able to validate the Form Authentication page title</a>
 <div class="">
-<span class="badge badge-default">To verify the different functionalities present on the Forgot Password page of Herokuapp website.To verify that user is successfully able to validate the Forgot Password page title</span>
+<span class="badge badge-default">To verify the different functionalities present on the Form Authentication page of Herokuapp website.To verify that user is successfully able to validate the Form Authentication page title</span>
 </div>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>15:30:32 PM</td>
+<td>01:04:37 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='15'>To verify that user is successfully able to validate the result while performing Forgot Password process</a>
+<a href="#" class="linked" test-id='1' id='15'>To verify that user is successfully able to validate the Form Authentication page content</a>
 <div class="">
-<span class="badge badge-default">To verify the different functionalities present on the Forgot Password page of Herokuapp website.To verify that user is successfully able to validate the result while performing Forgot Password process</span>
+<span class="badge badge-default">To verify the different functionalities present on the Form Authentication page of Herokuapp website.To verify that user is successfully able to validate the Form Authentication page content</span>
 </div>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>15:30:32 PM</td>
+<td>01:05:02 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='16'>To verify that user is successfully able to validate the result while performing Forgot Password process</a>
+<a href="#" class="linked" test-id='1' id='22'>To verify that user is successfully able to validate the error message for different combinations of username and password</a>
 <div class="">
-<span class="badge badge-default">To verify the different functionalities present on the Forgot Password page of Herokuapp website.To verify that user is successfully able to validate the result while performing Forgot Password process</span>
+<span class="badge badge-default">To verify the different functionalities present on the Form Authentication page of Herokuapp website.To verify that user is successfully able to validate the error message for different combinations of username and password</span>
 </div>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>15:31:02 PM</td>
+<td>01:05:02 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='24'>To verify that user is successfully able to validate the result while performing Forgot Password process</a>
+<a href="#" class="linked" test-id='1' id='23'>To verify that user is successfully able to validate the error message for different combinations of username and password</a>
 <div class="">
-<span class="badge badge-default">To verify the different functionalities present on the Forgot Password page of Herokuapp website.To verify that user is successfully able to validate the result while performing Forgot Password process</span>
+<span class="badge badge-default">To verify the different functionalities present on the Form Authentication page of Herokuapp website.To verify that user is successfully able to validate the error message for different combinations of username and password</span>
 </div>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>15:31:31 PM</td>
+<td>01:05:37 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='32'>To verify that user is successfully able to validate the result while performing Forgot Password process</a>
+<a href="#" class="linked" test-id='1' id='33'>To verify that user is successfully able to validate the error message for different combinations of username and password</a>
 <div class="">
-<span class="badge badge-default">To verify the different functionalities present on the Forgot Password page of Herokuapp website.To verify that user is successfully able to validate the result while performing Forgot Password process</span>
+<span class="badge badge-default">To verify the different functionalities present on the Form Authentication page of Herokuapp website.To verify that user is successfully able to validate the error message for different combinations of username and password</span>
 </div>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>15:31:59 PM</td>
+<td>01:06:13 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='40'>To verify that user is successfully able to validate the result while performing Forgot Password process</a>
+<a href="#" class="linked" test-id='1' id='43'>To verify that user is successfully able to validate the error message for different combinations of username and password</a>
 <div class="">
-<span class="badge badge-default">To verify the different functionalities present on the Forgot Password page of Herokuapp website.To verify that user is successfully able to validate the result while performing Forgot Password process</span>
+<span class="badge badge-default">To verify the different functionalities present on the Form Authentication page of Herokuapp website.To verify that user is successfully able to validate the error message for different combinations of username and password</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>01:06:49 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='53'>To verify that user is successfully able to validate the error message for different combinations of username and password</a>
+<div class="">
+<span class="badge badge-default">To verify the different functionalities present on the Form Authentication page of Herokuapp website.To verify that user is successfully able to validate the error message for different combinations of username and password</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>01:07:25 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='63'>To verify that user is successfully able to login using the correct credentials on Form Authentication page content</a>
+<div class="">
+<span class="badge badge-default">To verify the different functionalities present on the Form Authentication page of Herokuapp website.To verify that user is successfully able to login using the correct credentials on Form Authentication page content</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>01:08:01 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='73'>To verify that user is successfully able to validate the Secure Area page title</a>
+<div class="">
+<span class="badge badge-default">To verify the different functionalities present on the Form Authentication page of Herokuapp website.To verify that user is successfully able to validate the Secure Area page title</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>01:08:38 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='83'>To verify that user is successfully able to validate the Secure Area page content</a>
+<div class="">
+<span class="badge badge-default">To verify the different functionalities present on the Form Authentication page of Herokuapp website.To verify that user is successfully able to validate the Secure Area page content</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>01:09:15 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='93'>To verify that user is successfully able to logout of the Secure Area page</a>
+<div class="">
+<span class="badge badge-default">To verify the different functionalities present on the Form Authentication page of Herokuapp website.To verify that user is successfully able to logout of the Secure Area page</span>
 </div>
 </td>
 </tr>
@@ -503,13 +863,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>May 3, 2022 03:29:41 PM</h3>
+<h3>May 8, 2022 01:03:47 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>May 3, 2022 03:32:26 PM</h3>
+<h3>May 8, 2022 01:09:56 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -560,7 +920,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>6</b> scenarios passed</small></div>
+<div><small data-tooltip='100%'><b>11</b> scenarios passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -580,7 +940,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>39</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>90</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -599,7 +959,7 @@
 </div></div>
 <script>
 var timeline = {
-"To verify the different functionalities present on the Forgot Password page of Herokuapp website":164.315
+"To verify the different functionalities present on the Form Authentication page of Herokuapp website":367.887
 };
 </script>
 <div class="row">
@@ -609,8 +969,8 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@ForgotPassword_Tests</td>
-<td>7</td>
+<td>@FormAuthentication_Tests</td>
+<td>12</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -630,13 +990,13 @@ failParent: 0,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 6,
+passChild: 11,
 failChild: 0,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 39,
+passGrandChild: 90,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,
