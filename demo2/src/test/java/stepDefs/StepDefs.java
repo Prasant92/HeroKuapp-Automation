@@ -54,6 +54,8 @@ public class StepDefs {
 
 	public ForgotPasswordPage FPp=new ForgotPasswordPage(driver);
 
+	public FormAuthenticationPage FAp=new FormAuthenticationPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -761,5 +763,91 @@ public class StepDefs {
 	public void clickRetrievePasswordOnForgotPasswordLink()
 	{
 		FPp.clickRetrievePasswordOnForgotPasswordPage();
+	}
+
+	//************************************************StepDefs for Form Authentication Page validation**********************************//
+
+	@And("User clicks on the {string} Form Authentication link")
+	public void userClickOnFormAuthenticationLink(String s)
+	{
+		FAp.clickOnFormAuthenticationLink();
+	}
+
+	@Then("User validates the Page title as {string} on Form Authentication link")
+	public void validatePageTitleAsFormAuthenticationLink(String heading)
+	{
+		FAp.titleOfFormAuthenticationPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on Form Authentication link")
+	public void validatePageContentAsFormAuthenticationLink(String content)
+	{
+		FAp.contentOfFormAuthenticationPage(content);
+	}
+
+	@Then("User populates the username {string} on the Form Authentication link")
+	public void userPopulatesUsernameOnFormAuthenticationLink(String username)
+	{
+		FAp.populateUsernameOnFormAuthenticationPage(username);
+	}
+
+	@Then("User populates the password {string} on the Form Authentication link")
+	public void userPopulatesPasswordOnFormAuthenticationLink(String password)
+	{
+		FAp.populatePasswordOnFormAuthenticationPage(password);
+	}
+
+	@Then("User clicks on the login button on the Form Authentication link")
+	public void userClicksLoginButtonOnFormAuthenticationLink()
+	{
+		FAp.clickLoginOnFormAuthenticationPage();
+	}
+
+	@Then("User validates the {string}")
+	public void userValidatesErrorMessageOnFormAuthenticationLink(String emsg)
+	{
+		FAp.retrieveAndValidateErrorMessage(emsg);
+	}
+
+	@Then("User validates the success message {string} on Secure Area Page")
+	public void userValidatesSuccessMessageOnFormAuthenticationLink(String smsg)
+	{
+		FAp.retrieveAndValidateSuccessMessage(smsg);
+	}
+
+	@Then("User populates {string} as username on the Form Authentication link")
+	public void usernameOnFormAuthenticationLink(String username)
+	{
+		FAp.populateUsernameOnFormAuthenticationPage(username);
+	}
+
+	@Then("User populates {string} as password on the Form Authentication link")
+	public void passwordOnFormAuthenticationLink(String password)
+	{
+		FAp.populatePasswordOnFormAuthenticationPage(password);
+	}
+
+	@Then("User validates the Page title as {string} on Secure Area page")
+	public void validatePageTitleOnSecureAreaPageLink(String title)
+	{
+		FAp.titleOfSecureAreaPage(title);
+	}
+
+	@Then("User validates the Page content as {string} on Secure Area page")
+	public void validatePageContentOnSecureAreaPageLink(String content)
+	{
+		FAp.contentOfSecureAreaPage(content);
+	}
+
+	@Then("User clicks on the logout button the Secure Area page")
+	public void clickLogoutButtonOnSecureAreaPageLink()
+	{
+		FAp.clickLogOutOnSecureAreaPage();
+	}
+
+	@Then("User validates the {string} on Form Authentication link")
+	public void userValidatesSuccessMessageOnSecureAreaPage(String msg)
+	{
+		FAp.retrieveAndValidateSuccessMessageOnLoginPage(msg);
 	}
 }
