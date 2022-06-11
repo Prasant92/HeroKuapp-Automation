@@ -1,7 +1,7 @@
 @FormAuthentication_Tests
 Feature: To verify the different functionalities present on the Form Authentication page of Herokuapp website
 
-  Scenario: To verify that Exit Intent option is enabled and clickable
+  Scenario: To verify that Form Authentication option is enabled and clickable
     Given Start "Firefox" browser and launch the website "https://the-internet.herokuapp.com/"
     When User is on the homePage of the website
     Then Validate that heading of the homepage is "Welcome to the-internet"
