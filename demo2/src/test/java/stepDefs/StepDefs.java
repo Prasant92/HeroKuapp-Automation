@@ -56,6 +56,8 @@ public class StepDefs {
 
 	public FormAuthenticationPage FAp=new FormAuthenticationPage(driver);
 
+	public GeolocationPage GLp=new GeolocationPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -850,4 +852,25 @@ public class StepDefs {
 	{
 		FAp.retrieveAndValidateSuccessMessageOnLoginPage(msg);
 	}
+
+	//************************************************StepDefs for Geolocation Page validation**********************************//
+
+	@And("User clicks on the {string} Geolocation link")
+	public void userClickOnGeolocationLink(String s)
+	{
+		GLp.clickOnGeolocationLink();
+	}
+
+	@Then("User validates the Page title as {string} on Geolocation link")
+	public void validatePageTitleAsGeolocationLink(String heading)
+	{
+		GLp.titleOfGeolocationPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on Geolocation link")
+	public void validatePageContentAsGeolocationLink(String content)
+	{
+		GLp.contentOfGeolocationPage(content);
+	}
+
 }
