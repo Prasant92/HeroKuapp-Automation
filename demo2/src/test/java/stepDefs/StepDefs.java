@@ -58,6 +58,8 @@ public class StepDefs {
 
 	public GeolocationPage GLp=new GeolocationPage(driver);
 
+	public HorizontalSliderPage HSp=new HorizontalSliderPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -873,4 +875,37 @@ public class StepDefs {
 		GLp.contentOfGeolocationPage(content);
 	}
 
+	//************************************************StepDefs for Horizontal Slider Page validation**********************************//
+
+	@And("User clicks on the {string} Horizontal Slider link")
+	public void userClickOnHorizontalSliderLink(String s)
+	{
+		HSp.clickOnHorizontalSliderLink();
+	}
+
+	@Then("User validates the Page title as {string} on Horizontal Slider link")
+	public void validatePageTitleAsHorizontalSliderLink(String heading)
+	{
+		HSp.titleOfHorizontalSliderPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on Horizontal Slider link")
+	public void validatePageContentAsHorizontalSliderLink(String content)
+	{
+		HSp.contentOfHorizontalSliderPage(content);
+	}
+
+	@Then("User moves the slider from left to right by {string} times on Horizontal slider page")
+	public void moveSliderFromLeftToRight(String maxVal)
+	{
+		double d=Double.parseDouble(maxVal);
+		HSp.moveSliderHorizontallyFromLeftToRight(d);
+	}
+
+	@Then("User moves the slider from right to left by {string} times on Horizontal slider page")
+	public void moveSliderFromRightToLeft(String maxVal)
+	{
+		double dmax=Double.parseDouble(maxVal);
+		HSp.moveSliderHorizontallyFromRightToLeft(dmax);
+	}
 }
