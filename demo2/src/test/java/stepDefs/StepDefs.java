@@ -56,6 +56,8 @@ public class StepDefs {
 
 	public FormAuthenticationPage FAp=new FormAuthenticationPage(driver);
 
+	public FramesPage Fp=new FramesPage(driver);
+
 	public GeolocationPage GLp=new GeolocationPage(driver);
 
 	public HorizontalSliderPage HSp=new HorizontalSliderPage(driver);
@@ -853,6 +855,44 @@ public class StepDefs {
 	public void userValidatesSuccessMessageOnSecureAreaPage(String msg)
 	{
 		FAp.retrieveAndValidateSuccessMessageOnLoginPage(msg);
+	}
+
+	//************************************************StepDefs for Frames Page validation**********************************//
+
+	@And("User clicks on the {string} Frames link")
+	public void userClickOnFramesLink(String s)
+	{
+		Fp.clickOnFramesLink();
+	}
+
+	@Then("User validates the Page title as {string} on Frames link")
+	public void validatePageTitleAsFramesLink(String heading)
+	{
+		Fp.titleOfFramesPage(heading);
+	}
+
+	@Then("User clicks on the {string} link")
+	public void clickOnFramesOptionLinks(String option)
+	{
+		Fp.clickOnFramesOption(option);
+	}
+
+	@Then("User switches to {string} frame and retrieves the {string} as the text in the frame")
+	public void switchToFrameAndRetrieveTextOnNestedFramesOptionLink(String frame,String text)
+	{
+		Fp.switchToFrameAndGetText(frame,text);
+	}
+
+	@Then("User validates the Page content as {string}")
+	public void validatePageContentAsiFramesLink(String content)
+	{
+		Fp.contentOfiFramePage(content);
+	}
+
+	@Then("User switches to iframe and retrieves the {string} as the text in the frame")
+	public void switchToiFrameAndRetrieveTextOniFramesOptionLink(String text)
+	{
+		Fp.switchToiFrameAndGetText(text);
 	}
 
 	//************************************************StepDefs for Geolocation Page validation**********************************//
