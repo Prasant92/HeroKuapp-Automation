@@ -62,6 +62,9 @@ public class StepDefs {
 
 	public HorizontalSliderPage HSp=new HorizontalSliderPage(driver);
 
+	public HoversPage Hp=new HoversPage(driver);
+
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -712,7 +715,7 @@ public class StepDefs {
 	}
 
 	@Then("User scrolls down to the bottom of the Floating Menu page")
-	public void scrollToBottomOfFloatingMenuLink() throws AWTException {
+	public void scrollToBottomOfFloatingMenuLink()  {
 		FMp.scrollFloatingMenuPageToBottom();
 	}
 
@@ -947,5 +950,37 @@ public class StepDefs {
 	{
 		double dmax=Double.parseDouble(maxVal);
 		HSp.moveSliderHorizontallyFromRightToLeft(dmax);
+	}
+
+	//************************************************StepDefs for Hovers Page validation**********************************//
+
+	@And("User clicks on the {string} Hovers link")
+	public void userClickOnHoversLink(String s)
+	{
+		Hp.clickOnHoversLink();
+	}
+
+	@Then("User validates the Page title as {string} on Hovers link")
+	public void validatePageTitleAsHoversLink(String heading)
+	{
+		Hp.titleOfHoversPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on Hovers link")
+	public void validatePageContentAsHoversLink(String content)
+	{
+		Hp.contentOfHoversPage(content);
+	}
+
+	@Then("User hovers the mouse on the image figure and retrieves the name of the image number {string}")
+	public void hoverOnImageAndRetrieveImageName(String imgNum)
+	{
+		Hp.hoverOverImageAndRetrieveName(imgNum);
+	}
+
+	@Then("User hovers the mouse on the image figure and clicks on the view profile of the image number {string} and validates the profile content of the image as {string}")
+	public void hoverOnImageClickOnViewProfileAndValidateProfileContent(String imgNum,String content)
+	{
+		Hp.clickViewProfileAndValidateSourceText(imgNum,content);
 	}
 }
