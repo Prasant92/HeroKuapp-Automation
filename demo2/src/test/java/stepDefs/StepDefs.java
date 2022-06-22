@@ -66,6 +66,8 @@ public class StepDefs {
 
 	public InfiniteScrollPage ISp=new InfiniteScrollPage(driver);
 
+	public InputsPage Ip=new InputsPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -1003,5 +1005,37 @@ public class StepDefs {
 	public void validateInfiniteScrollingToBottomOfTheWebPage(String s)
 	{
 		ISp.infiniteScrollToBottomPage(s);
+	}
+
+	//************************************************StepDefs for Inputs Page validation**********************************//
+
+	@And("User clicks on the {string} Inputs link")
+	public void userClickOnInputsLink(String s)
+	{
+		Ip.clickOnInputsLink();
+	}
+
+	@Then("User validates the Page title as {string} on Inputs link")
+	public void validatePageTitleAsInputsLink(String heading)
+	{
+		Ip.titleOfInputsPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on Inputs link")
+	public void validatePageContentAsInputsLink(String content)
+	{
+		Ip.contentOfInputsPage(content);
+	}
+
+	@Then("User populates the required value {string} and then increments it")
+	public void populateAndIncrementValueOnInputsLink(String value)
+	{
+		Ip.incrementingTheValue(value);
+	}
+
+	@Then("User populates the required value {string} and then decrements it")
+	public void populateAndDecrementValueOnInputsLink(String value)
+	{
+		Ip.decrementingTheValue(value);
 	}
 }
