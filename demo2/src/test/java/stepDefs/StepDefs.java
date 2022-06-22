@@ -64,6 +64,7 @@ public class StepDefs {
 
 	public HoversPage Hp=new HoversPage(driver);
 
+	public InfiniteScrollPage ISp=new InfiniteScrollPage(driver);
 
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
@@ -982,5 +983,25 @@ public class StepDefs {
 	public void hoverOnImageClickOnViewProfileAndValidateProfileContent(String imgNum,String content)
 	{
 		Hp.clickViewProfileAndValidateSourceText(imgNum,content);
+	}
+
+	//************************************************StepDefs for Infinite Scroll Page validation**********************************//
+
+	@And("User clicks on the {string} Infinite Scroll link")
+	public void userClickOnInfiniteScrollLink(String s)
+	{
+		ISp.clickOnInfiniteScrollLink();
+	}
+
+	@Then("User validates the Page title as {string} on Infinite Scroll link")
+	public void validatePageTitleAsInfiniteScrollLink(String heading)
+	{
+		ISp.titleOfInfiniteScrollPage(heading);
+	}
+
+	@Then("User scrolls down to the bottom of the Infinite Scroll page by {string} times")
+	public void validateInfiniteScrollingToBottomOfTheWebPage(String s)
+	{
+		ISp.infiniteScrollToBottomPage(s);
 	}
 }
