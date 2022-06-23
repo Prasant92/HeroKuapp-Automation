@@ -44,8 +44,8 @@ public class DigestAuthPage extends BaseClass {
     public void acceptDigestAuthAlertPageLink()
     {
         try {
-            Runtime.getRuntime().exec("C:\\Users\\prasa\\git\\repository\\demo2\\src\\test\\resources\\Authentication_PopUP Automation code.exe");
-            Thread.sleep(10000);
+            Runtime.getRuntime().exec("C:\\Users\\hp\\IdeaProjects\\HeroKuapp-Automation\\demo2\\src\\test\\resources\\Authentication_PopUP Automation code.exe");
+            Thread.sleep(5000);
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }

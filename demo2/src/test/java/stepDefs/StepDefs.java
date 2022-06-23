@@ -68,6 +68,8 @@ public class StepDefs {
 
 	public InputsPage Ip=new InputsPage(driver);
 
+	public JQueryUIMenusPage JQUMp=new JQueryUIMenusPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -1037,5 +1039,49 @@ public class StepDefs {
 	public void populateAndDecrementValueOnInputsLink(String value)
 	{
 		Ip.decrementingTheValue(value);
+	}
+
+	//************************************************StepDefs for JQuery UI Menus Page validation**********************************//
+
+	@And("User clicks on the {string} JQuery UI Menus link")
+	public void userClickOnJQueryUIMenusLink(String s)
+	{
+		JQUMp.clickOnJQueryUIMenusLink();
+	}
+
+	@Then("User validates the Page title as {string} on JQuery UI Menus link")
+	public void validatePageTitleAsJQueryUIMenusLink(String heading)
+	{
+		JQUMp.titleOfJQueryUIMenusPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on JQuery UI Menus link")
+	public void validatePageContentAsJQueryUIMenusLink(String content)
+	{
+		JQUMp.contentOfJQueryUIMenusPage(content);
+	}
+
+	@Then("User hovers over the Enabled option and clicks on back to JQuery UI page and validates page title as {string}")
+	public void validatePageTitleAsJQueryUILink(String heading)
+	{
+		JQUMp.titleOfHoverOverEnabledOptionAndClickOnBackToJQueryUIOption(heading);
+	}
+
+	@Then("User hovers over the Enabled option and clicks on back to JQuery UI page and validates page content as {string}")
+	public void validatePageContentAsJQueryUILink(String content)
+	{
+		JQUMp.contentOfHoverOverEnabledOptionAndClickOnBackToJQueryUIOption(content);
+	}
+
+	@Then("User hovers over the Enabled option and clicks on back to JQuery UI page and redirects back to the menu page with title as {string}")
+	public void validateUserRedirectsFromMenuToJQueryUIPageAndBack(String heading)
+	{
+		JQUMp.validateThatUserIsRedirectedBackToMenuPage(heading);
+	}
+
+	@Then("User hovers over the Enabled option and hovers again on the Downloads option to download the document in {string}")
+	public void downloadInRequiredFormatOnJQueryUIMenuPage(String format)
+	{
+		JQUMp.downloadInDifferentFormat(format);
 	}
 }
