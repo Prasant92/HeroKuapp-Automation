@@ -14,13 +14,9 @@ public class JQueryUIMenusPage extends  HomePage{
 
     By pageTitle=By.xpath("//*[contains(text(),'JQueryUI - Menu')]");
 
-    By pageContent=By.xpath("//*[contains(text(),'JQuery UI Menus')]");
-
     By backToJQueryUI=By.xpath("//*[contains(text(),'Back to JQuery UI')]");
 
     By pageTitle_JQueryUI=By.xpath("//*[contains(text(),'JQuery UI')]");
-
-    By pageContent_JQueryUI=By.xpath("//*[contains(text(),'is many things, but one thing specifically that causes automation challenges is their set of Widgets')]");
 
     By clickMenuButton=By.xpath("//*[contains(text(),'Menu')]");
 
