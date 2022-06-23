@@ -46,7 +46,7 @@ public class BasicAuthPage extends HomePage {
 	public void acceptBasicAuthAlertPageLink()
 	{	
 		try {
-			Runtime.getRuntime().exec("C:\\Users\\prasa\\git\\repository\\demo2\\src\\test\\resources\\Authentication_PopUP Automation code.exe");
+			Runtime.getRuntime().exec("C:\\Users\\hp\\IdeaProjects\\HeroKuapp-Automation\\demo2\\src\\test\\resources\\Authentication_PopUP Automation code.exe");
 			Thread.sleep(10000);
 		} catch (IOException | InterruptedException e) {
 			e.printStackTrace();
