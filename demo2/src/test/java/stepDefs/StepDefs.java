@@ -70,6 +70,8 @@ public class StepDefs {
 
 	public JQueryUIMenusPage JQUMp=new JQueryUIMenusPage(driver);
 
+	public JavaScriptAlertsPage JSAp=new JavaScriptAlertsPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -1083,5 +1085,55 @@ public class StepDefs {
 	public void downloadInRequiredFormatOnJQueryUIMenuPage(String format)
 	{
 		JQUMp.downloadInDifferentFormat(format);
+	}
+
+	//************************************************StepDefs for JavaScript Alerts Page validation**********************************//
+
+	@And("User clicks on the {string} JavaScript Alerts link")
+	public void userClickOnJavaScriptAlertsLink(String s)
+	{
+		JSAp.clickOnJavaScriptAlertsLink();
+	}
+
+	@Then("User validates the Page title as {string} on JavaScript Alerts link")
+	public void validatePageTitleAsJavaScriptAlertsLink(String heading)
+	{
+		JSAp.titleOfJavaScriptAlertsPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on JavaScript Alerts link")
+	public void validatePageContentAsJavaScriptAlertsLink(String content)
+	{
+		JSAp.contentOfJavaScriptAlertsPage(content);
+	}
+
+	@Then("User accepts the JS alert by clicking on JSAlert button")
+	public void acceptJSAlertOnJavaScriptAlertsLink()
+	{
+		JSAp.acceptTheAlertAndValidateResultOnJSAlertButton();
+	}
+
+	@Then("User accepts the JS alert by clicking on JSConfirm button")
+	public void acceptJSConfirmOnJavaScriptAlertsLink()
+	{
+		JSAp.acceptTheAlertAndValidateResultOnJSConfirmButton();
+	}
+
+	@Then("User dismisses the JS alert by clicking on JSConfirm button")
+	public void dismissJSConfirmOnJavaScriptAlertsLink()
+	{
+		JSAp.cancelTheAlertAndValidateResultOnJSAlertButton();
+	}
+
+	@Then("User enters the text in prompt alert and accepts the JS alert by clicking on JSPrompt button")
+	public void acceptJSPromptBySendingTextToAlertBoxOnJavaScriptAlertsLink()
+	{
+		JSAp.acceptTheAlertAndValidateResultOnJSPromptButton();
+	}
+
+	@Then("User enters the text in prompt alert and dismisses the JS alert by clicking on JSPrompt button")
+	public void dismissJSPromptBySendingTextToAlertBoxOnJavaScriptAlertsLink()
+	{
+		JSAp.cancelTheAlertAndValidateResultOnJSPromptButton();
 	}
 }
