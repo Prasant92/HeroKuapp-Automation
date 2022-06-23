@@ -72,6 +72,8 @@ public class StepDefs {
 
 	public JavaScriptAlertsPage JSAp=new JavaScriptAlertsPage(driver);
 
+	public JavaScriptOnloadEventError JOEEp=new JavaScriptOnloadEventError(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -1135,5 +1137,19 @@ public class StepDefs {
 	public void dismissJSPromptBySendingTextToAlertBoxOnJavaScriptAlertsLink()
 	{
 		JSAp.cancelTheAlertAndValidateResultOnJSPromptButton();
+	}
+
+	//************************************************StepDefs for JavaScript onload event error Page validation**********************************//
+
+	@And("User clicks on the {string} JavaScript onload event error link")
+	public void userClickOnJavaScriptOnloadEventErrorLink(String s)
+	{
+		JOEEp.clickOnJavaScriptOnloadEventErrorLink();
+	}
+
+	@Then("User validates the Page content as {string} on JavaScript onload event error link")
+	public void validatePageContentAsJavaScriptOnloadEventErrorLink(String content)
+	{
+		JOEEp.contentOfJavaScriptOnloadEventErrorPage(content);
 	}
 }
