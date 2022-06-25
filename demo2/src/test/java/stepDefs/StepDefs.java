@@ -74,6 +74,8 @@ public class StepDefs {
 
 	public JavaScriptOnloadEventError JOEEp=new JavaScriptOnloadEventError(driver);
 
+	public KeyPressesPage KPp=new KeyPressesPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -1151,5 +1153,31 @@ public class StepDefs {
 	public void validatePageContentAsJavaScriptOnloadEventErrorLink(String content)
 	{
 		JOEEp.contentOfJavaScriptOnloadEventErrorPage(content);
+	}
+
+	//************************************************StepDefs for Key Presses Page validation**********************************//
+
+	@And("User clicks on the {string} Key Presses link")
+	public void userClickOnKeyPressesLink(String s)
+	{
+		KPp.clickOnKeyPressesLink();
+	}
+
+	@Then("User validates the Page title as {string} on Key Presses link")
+	public void validatePageTitleAsKeyPressesLink(String heading)
+	{
+		KPp.titleOfKeyPressesPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on Key Presses link")
+	public void validatePageContentAsKeyPressesLink(String content)
+	{
+		KPp.contentOfKeyPressesPage(content);
+	}
+
+	@Then("User populates the {string} into the textbox and verifies them on the Key pressed page")
+	public void populateAndVerifyTextOnKeyPressesLink(String content)
+	{
+		KPp.populateAndVerifyEnteredTextIntoTextBox(content);
 	}
 }
