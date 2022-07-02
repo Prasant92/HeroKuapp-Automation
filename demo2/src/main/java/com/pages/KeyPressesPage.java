@@ -78,6 +78,7 @@ public class KeyPressesPage extends  HomePage{
                 Thread.sleep(3000);
                 String st="";
                 st=driver.findElement(KeyPresses_Option).getText();
+                System.out.println(driver.findElement(resultOfKeyPressed).getText());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

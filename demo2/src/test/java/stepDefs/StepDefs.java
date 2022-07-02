@@ -76,6 +76,8 @@ public class StepDefs {
 
 	public KeyPressesPage KPp=new KeyPressesPage(driver);
 
+	public LargeAndDeepDOMPage LADDp=new LargeAndDeepDOMPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -1179,5 +1181,61 @@ public class StepDefs {
 	public void populateAndVerifyTextOnKeyPressesLink(String content)
 	{
 		KPp.populateAndVerifyEnteredTextIntoTextBox(content);
+	}
+
+	//************************************************StepDefs for Large And Deep DOM Page validation**********************************//
+
+	@And("User clicks on the {string} Large And Deep DOM link")
+	public void userLargeAndDeepDOMLink(String s)
+	{
+		LADDp.clickOnLargeAndDeepDOMLink();
+	}
+
+	@Then("User validates the Page title as {string} on Large And Deep DOM link")
+	public void validatePageTitleAsLargeAndDeepDOMLink(String heading)
+	{
+		LADDp.titleOfLargeAndDeepDOMPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on Large And Deep DOM link")
+	public void validatePageContentAsLargeAndDeepDOMLink(String content)
+	{
+		LADDp.contentOfLargeAndDeepDOMPage(content);
+	}
+
+	@Then("User retrieves the {string}th sibling from Large And Deep DOM page")
+	public void retrieveNthSibling(String x)
+	{
+		LADDp.retrieveSiblings(x);
+	}
+
+	@Then("User retrieves the headers of the Table on the Large And Deep DOM page")
+	public void retrieveHeadersFromTable()
+	{
+		LADDp.retrieveTableHeader();
+	}
+
+	@Then("User retrieves the complete table content from the Large And Deep DOM page")
+	public void retrieveCompleteInfoFromTable()
+	{
+		LADDp.retrieveTableContent();
+	}
+
+	@Then("User retrieves the {string} value from the table on Large And Deep DOM page")
+	public void retrieveNthValueFromTable(String num)
+	{
+		LADDp.retrieveSpecificValueFromTable(num);
+	}
+
+	@Then("User retrieves all cell values from {string}th row from the table on Large And Deep DOM page")
+	public void retrieveAllCellValuesFromNthRowOfTable(String row)
+	{
+		LADDp.retrieveAllCellValuesForSpecificRow(row);
+	}
+
+	@Then("User retrieves all row values from {string}th column from the table on Large And Deep DOM page")
+	public void retrieveAllRowValuesFromNthColumnOfTable(String col)
+	{
+		LADDp.retrieveAllColValuesForSpecificCol(col);
 	}
 }
