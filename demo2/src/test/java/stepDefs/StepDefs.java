@@ -78,6 +78,8 @@ public class StepDefs {
 
 	public LargeAndDeepDOMPage LADDp=new LargeAndDeepDOMPage(driver);
 
+	public MultipleWindowsPage MWp=new MultipleWindowsPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -1186,7 +1188,7 @@ public class StepDefs {
 	//************************************************StepDefs for Large And Deep DOM Page validation**********************************//
 
 	@And("User clicks on the {string} Large And Deep DOM link")
-	public void userLargeAndDeepDOMLink(String s)
+	public void userClicksOnLargeAndDeepDOMLink(String s)
 	{
 		LADDp.clickOnLargeAndDeepDOMLink();
 	}
@@ -1237,5 +1239,25 @@ public class StepDefs {
 	public void retrieveAllRowValuesFromNthColumnOfTable(String col)
 	{
 		LADDp.retrieveAllColValuesForSpecificCol(col);
+	}
+
+	//************************************************StepDefs for Multiple Windows Page validation**********************************//
+
+	@And("User clicks on the {string} Multiple Windows link")
+	public void userClicksOnMultipleWindowsLink(String s)
+	{
+		MWp.clickOnMultipleWindowsLink();
+	}
+
+	@Then("User validates the Page title as {string} on Multiple Windows link")
+	public void validatePageTitleAsMultipleWindowsLink(String heading)
+	{
+		MWp.titleOfMultipleWindowsPage(heading);
+	}
+
+	@Then("User opens a new tab and validates the Page title as {string} on new page of Multiple Windows link and redirects back to the parent tab")
+	public void openNewTabAndValidatePageTitleAsMultipleWindowsLink(String heading)
+	{
+		MWp.clickHereToOpenNewWindowAndVerifyTheNewWindowTitle(heading);
 	}
 }
