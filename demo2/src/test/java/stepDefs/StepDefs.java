@@ -80,6 +80,8 @@ public class StepDefs {
 
 	public MultipleWindowsPage MWp=new MultipleWindowsPage(driver);
 
+	public NestedFramesPage NFp=new NestedFramesPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -1259,5 +1261,13 @@ public class StepDefs {
 	public void openNewTabAndValidatePageTitleAsMultipleWindowsLink(String heading)
 	{
 		MWp.clickHereToOpenNewWindowAndVerifyTheNewWindowTitle(heading);
+	}
+
+	//************************************************StepDefs for Nested Frames Page validation**********************************//
+
+	@And("User clicks on the {string} Nested Frames link")
+	public void userClicksOnNestedFramesLink(String s)
+	{
+		NFp.clickOnNestedFramesLink();
 	}
 }
