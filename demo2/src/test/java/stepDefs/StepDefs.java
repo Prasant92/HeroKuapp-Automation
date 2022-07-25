@@ -82,6 +82,8 @@ public class StepDefs {
 
 	public NestedFramesPage NFp=new NestedFramesPage(driver);
 
+	public NotificationMessagesPage NMp=new NotificationMessagesPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -1269,5 +1271,37 @@ public class StepDefs {
 	public void userClicksOnNestedFramesLink(String s)
 	{
 		NFp.clickOnNestedFramesLink();
+	}
+
+	//************************************************StepDefs for Notification Messages Page validation**********************************//
+
+	@And("User clicks on the {string} Notification Messages link")
+	public void userClicksOnNotificationMessagesLink(String s)
+	{
+		NMp.clickOnNotificationMessagesLink();
+	}
+
+	@Then("User validates the Page title as {string} on Notification Messages link")
+	public void validatePageTitleAsNotificationMessagesLink(String heading)
+	{
+		NMp.titleOfNotificationMessagesPage(heading);
+	}
+
+	@Then("User validates the Page content as {string} on Notification Messages link")
+	public void validatePageContentAsNotificationMessagesLink(String content)
+	{
+		NMp.contentOfNotificationMessagesPage(content);
+	}
+
+	@Then("User validates the Notification Message as {string} on Notification Messages link")
+	public void validateNotificationMessageAsNotificationMessagesLink(String msg)
+	{
+		NMp.validateNotificationMessage(msg);
+	}
+
+	@Then("User clicks on the Click here hyperlink")
+	public void clickOnClickHereNotificationMessagesLink()
+	{
+		NMp.clickHereToLoadNewMessage();
 	}
 }
