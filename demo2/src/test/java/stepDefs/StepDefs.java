@@ -84,6 +84,8 @@ public class StepDefs {
 
 	public NotificationMessagesPage NMp=new NotificationMessagesPage(driver);
 
+	public RedirectLinkPage RLp=new RedirectLinkPage(driver);
+
 	//************************************************StepDefs for Home Page validation**********************************//
 	@Given("Start {string} browser and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
@@ -1303,5 +1305,37 @@ public class StepDefs {
 	public void clickOnClickHereNotificationMessagesLink()
 	{
 		NMp.clickHereToLoadNewMessage();
+	}
+
+	//************************************************StepDefs for Redirect Link Page validation**********************************//
+
+	@And("User clicks on the {string} Redirect link")
+	public void userClicksOnRedirectLink(String s)
+	{
+		RLp.clickOnRedirectLinkLink();
+	}
+
+	@Then("User validates the Page title as {string} on Redirect link")
+	public void validatePageTitleAsRedirectLink(String heading)
+	{
+		RLp.titleOfRedirectLinkPage(heading);
+	}
+
+	@Then("User is redirected to Status codes page and validates the Page title as {string} on Status Codes page")
+	public void validatePageTitleAsStatusCodes(String heading)
+	{
+		RLp.titleOfStatusCodePage(heading);
+	}
+
+	@Then("User is redirected to IANA page and retrieves the complete list of status codes from the page")
+	public void retrieveStatusCodesListFromIANAPage()
+	{
+		RLp.viewAllTheHTTPCodes();
+	}
+
+	@Then("User selects {string} redirects to that page and validates Page title as {string} and redirects back to Status codes Page")
+	public void retrieveAndValidateStatusCodesContent(String code,String title)
+	{
+		RLp.viewAndRetrieveStatusCodes(code,title);
 	}
 }
