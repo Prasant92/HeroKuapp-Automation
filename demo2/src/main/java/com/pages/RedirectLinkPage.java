@@ -115,12 +115,10 @@ public class RedirectLinkPage extends HomePage{
         {
             String st="";
             st=driver.findElement(By.xpath("//div[@class='example']/ul/li["+i+"]")).getText();
-            System.out.println("The code is "+st);
             if(code.equals(st)){
                 switch(st)
                 {
                     case "200":
-                        System.out.println("This is 200 code");
                         driver.findElement(By.xpath("//div[@class='example']/ul/li[1]/a")).click();
                         Thread.sleep(3000);
                         contentOfStatusCodesPageFor200(content);
@@ -146,7 +144,6 @@ public class RedirectLinkPage extends HomePage{
                         break;
                 }
             }
-            //driver.findElement(By.xpath("//div[@class='example']/ul/li["+i+"]")).click();
         }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);

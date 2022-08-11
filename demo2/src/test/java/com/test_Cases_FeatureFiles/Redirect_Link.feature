@@ -1,4 +1,4 @@
-
+@RedirectLink_Tests
 Feature: To verify the different functionalities present on the Redirect link page of Herokuapp website
 
   Scenario: To verify that Redirect link option is enabled and clickable
@@ -31,7 +31,7 @@ Feature: To verify the different functionalities present on the Redirect link pa
     And User clicks on the "Redirect Link" Redirect link
     Then User is redirected to IANA page and retrieves the complete list of status codes from the page
     And Close the browser session
-  @RedirectLink_Tests
+
   Scenario Outline: To verify that user is able to view, retrieve, redirect and validate the status code from the list
     Given Start "Firefox" browser and launch the website "https://the-internet.herokuapp.com/"
     When User is on the homePage of the website
