@@ -63,12 +63,17 @@ public class BasicAuthPage extends HomePage {
 		System.out.println("The alert message is "+alertMsg);
 		try {
 			Thread.sleep(4000);
+			a.dismiss();
+			try {
+				Thread.sleep(4000);
+				String heading2=driver.findElement(BasicAuth_AlertDismiss).getText();
+				Assert.assertEquals(heading1, heading2,"Page Content assertion is not successful after the dissmisal of pop up");
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		a.dismiss();
-		String heading2=driver.findElement(BasicAuth_AlertDismiss).getText();
-		Assert.assertEquals(heading1, heading2,"Page Content assertion is not successful after the dissmisal of pop up");
 		System.out.println("---------------------------------Step Passed---------------------------------");
 	}
 	
