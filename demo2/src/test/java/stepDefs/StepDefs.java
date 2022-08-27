@@ -87,7 +87,7 @@ public class StepDefs {
 	public RedirectLinkPage RLp=new RedirectLinkPage(driver);
 
 	//************************************************StepDefs for Home Page validation**********************************//
-	@Given("Start {string} browser and launch the website {string}")
+	@Given("Start {string} and launch the website {string}")
 	public void launchTheWebsite(String browser,String url)
 	{
 		System.out.println("-----Scenario Execution Started-----");

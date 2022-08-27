@@ -1,0 +1,2 @@
+Send("admin")
+Send((ENTER))

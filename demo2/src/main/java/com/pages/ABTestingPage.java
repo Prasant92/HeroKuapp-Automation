@@ -30,6 +30,11 @@ public class ABTestingPage extends HomePage{
 				e.printStackTrace();
 			}
 			driver.findElement(ABTesting_Option).click();
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			System.out.println("---------------------------------Step Passed---------------------------------");
 		}
 	}

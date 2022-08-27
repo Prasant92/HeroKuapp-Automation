@@ -38,14 +38,14 @@ public class BaseClass {
 			System.out.println("From Baseclass: "+driver);
 			break;
 		case "GoogleChrome":
-			System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "D:\\Chrome Drivers\\chromedriver_win32\\chromedriver.exe");
 			driver=new ChromeDriver();
 			driver.get(URL);
 			driver.manage().window().maximize();
 			System.out.println("From Baseclass: "+driver);
 			break;
 		case "Edge":
-			System.setProperty("webdriver.edge.driver", "D:\\edgedriver_win64\\msedgedriver.exe");
+			System.setProperty("webdriver.edge.driver", "D:\\Edge Drivers\\edgedriver_win64\\msedgedriver.exe");
 			driver=new EdgeDriver();
 			driver.get(URL);
 			driver.manage().window().maximize();
