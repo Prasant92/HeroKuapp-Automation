@@ -31,7 +31,7 @@ public class BaseClass {
 			System.out.println("From Baseclass: "+driver);
 			break;
 		case "Firefox":
-			System.setProperty("webdriver.gecko.driver", "D:\\geckodriver-v0.30.0-win64\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "D:\\Firefox Drivers\\geckodriver-v0.31.0-win64\\geckodriver.exe");
 			driver=new FirefoxDriver();
 			driver.get(URL);
 			driver.manage().window().maximize();
