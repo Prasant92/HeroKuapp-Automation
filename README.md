@@ -1,4 +1,4 @@
-# HeroKuapp-Automation
+# HeroKuapp Website
 -----------------------
 Automation framework using BDD framework 
 This is a maven based project framework is based BDD using POM design pattern where in for every web page there has been created class containing all the functionality of that specific webpage.
