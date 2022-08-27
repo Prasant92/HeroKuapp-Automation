@@ -14,7 +14,7 @@ public class ABTestingPage extends HomePage{
 
 	By ABTesting_Option=By.xpath("//*[contains(text(),'A/B Testing')]");
 	
-	By pageTitle=By.xpath("//*[contains(text(),'A/B Test Variation 1')]");
+	By pageTitle=By.xpath("//*[contains(text(),'A/B Test Control')]");
 	
 	By pageTitleDefinition=By.xpath("//*[contains(text(), 'Also known as split testing')]");
 	
