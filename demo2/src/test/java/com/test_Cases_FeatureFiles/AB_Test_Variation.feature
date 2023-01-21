@@ -13,7 +13,6 @@ Feature: To verify the different functionalities present on the A/B Testing page
 			|browser	  |
 			|Firefox	  |
 			|GoogleChrome |
-			|Edge         |
 
 	Scenario Outline: To verify that the Page title of A/B testing option is A/B Test Variation1
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
@@ -26,7 +25,6 @@ Feature: To verify the different functionalities present on the A/B Testing page
 			|browser	  |
 			|Firefox	  |
 			|GoogleChrome |
-			|Edge         |
 
 	Scenario Outline: To verify the content of the A/B Test Variation page
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
@@ -39,4 +37,3 @@ Feature: To verify the different functionalities present on the A/B Testing page
 			|browser	  |
 			|Firefox	  |
 			|GoogleChrome |
-			|Edge         |

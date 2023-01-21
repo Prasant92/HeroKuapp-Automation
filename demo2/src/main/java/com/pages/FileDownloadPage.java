@@ -93,7 +93,7 @@ public class FileDownloadPage extends HomePage{
         File[] content = directory.listFiles();
         for (int i = 0; i < content.length; i++) {
             if (content[i].getName().equals(fileName))
-                return flag=true;
+                flag=true;
         }
         return flag;
     }

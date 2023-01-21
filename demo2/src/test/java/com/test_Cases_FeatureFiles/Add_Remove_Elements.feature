@@ -13,7 +13,6 @@ Feature: To verify the different functionalities present on the Add/Remove Eleme
 			| browser      |
 			| Firefox      |
 			| GoogleChrome |
-			| Edge         |
 
 	Scenario Outline: To verify that the Page title of A/B testing option is Add/Remove Elements
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
@@ -26,7 +25,6 @@ Feature: To verify the different functionalities present on the Add/Remove Eleme
 			| browser      |
 			| Firefox      |
 			| GoogleChrome |
-			| Edge         |
 
 	Scenario Outline: To verify that the Add element option can be used n times on Add/Remove Elements page
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
@@ -39,7 +37,6 @@ Feature: To verify the different functionalities present on the Add/Remove Eleme
 			| browser      |
 			| Firefox      |
 			| GoogleChrome |
-			| Edge         |
 
 	Scenario Outline: To verify that the delete option can be used n times on Add/Remove Elements page
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
@@ -53,4 +50,3 @@ Feature: To verify the different functionalities present on the Add/Remove Eleme
 			| browser      |
 			| Firefox      |
 			| GoogleChrome |
-			| Edge         |

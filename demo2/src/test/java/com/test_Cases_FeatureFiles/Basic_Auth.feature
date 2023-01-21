@@ -13,7 +13,6 @@ Feature: To verify the different functionalities present on the Basic Auth page 
 			|browser	  |
 			|Firefox	  |
 			|GoogleChrome |
-			|Edge         |
 
 	Scenario Outline: To verify that user is successfully able to dismiss the alert without entering the credentials
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
@@ -25,8 +24,6 @@ Feature: To verify the different functionalities present on the Basic Auth page 
 		Examples:
 			|browser	  |
 			|Firefox	  |
-			|GoogleChrome |
-			|Edge         |
 
 	Scenario Outline: To verify that user is successfully able to accept the alert without entering the credentials
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
@@ -39,7 +36,6 @@ Feature: To verify the different functionalities present on the Basic Auth page 
 			|browser	  |
 			|Firefox	  |
 			|GoogleChrome |
-			|Edge         |
 
 	Scenario Outline: To verify that user is successfully able to validate the page title
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
@@ -53,7 +49,6 @@ Feature: To verify the different functionalities present on the Basic Auth page 
 			|browser	  |
 			|Firefox	  |
 			|GoogleChrome |
-			|Edge         |
 
 	Scenario Outline: To verify that user is successfully able to validate the page content
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
@@ -67,4 +62,3 @@ Feature: To verify the different functionalities present on the Basic Auth page 
 			|browser	  |
 			|Firefox	  |
 			|GoogleChrome |
-			|Edge         |

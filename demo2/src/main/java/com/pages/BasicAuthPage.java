@@ -1,10 +1,10 @@
 package com.pages;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;

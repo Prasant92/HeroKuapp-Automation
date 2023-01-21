@@ -31,14 +31,14 @@ public class BaseClass {
 			System.out.println("From Baseclass: "+driver);
 			break;
 		case "Firefox":
-			System.setProperty("webdriver.gecko.driver", "D:\\Firefox Drivers\\geckodriver-v0.31.0-win64\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "D:\\Firefox Drivers\\geckodriver-v0.32.0-win64\\geckodriver.exe");
 			driver=new FirefoxDriver();
 			driver.get(URL);
 			driver.manage().window().maximize();
 			System.out.println("From Baseclass: "+driver);
 			break;
 		case "GoogleChrome":
-			System.setProperty("webdriver.chrome.driver", "D:\\Chrome Drivers\\chromedriver_win32\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "D:\\Chrome Drivers\\chromedriver_win32_109v\\chromedriver.exe");
 			driver=new ChromeDriver();
 			driver.get(URL);
 			driver.manage().window().maximize();
