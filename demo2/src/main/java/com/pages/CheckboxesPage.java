@@ -1,5 +1,6 @@
 package com.pages;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -24,7 +25,7 @@ public class CheckboxesPage extends HomePage{
 	public void clickOnCheckboxesPageLink()  {
 		if(driver.findElement(Checkboxes_Option).isEnabled())
 		{
-			WebDriverWait w=new WebDriverWait(driver, 10);
+			WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
 			w.until(ExpectedConditions.elementToBeClickable(Checkboxes_Option));
 			try {
 				Thread.sleep(2000);

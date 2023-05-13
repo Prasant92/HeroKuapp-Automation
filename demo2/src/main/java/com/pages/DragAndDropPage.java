@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class DragAndDropPage extends HomePage{
 
 
@@ -26,7 +28,7 @@ public class DragAndDropPage extends HomePage{
     public void clickOnDragAndDropPageLink()  {
         if(driver.findElement(DragAndDrop_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(DragAndDrop_Option));
             try {
                 Thread.sleep(2000);

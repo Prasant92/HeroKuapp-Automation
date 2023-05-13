@@ -1,12 +1,16 @@
 package stepDefs;
 
 import com.pages.*;
-import org.openqa.selenium.WebDriver;
-
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
 
 import java.awt.*;
 
@@ -86,12 +90,21 @@ public class StepDefs {
 
 	public RedirectLinkPage RLp=new RedirectLinkPage(driver);
 
+	Scenario scenario;
+
 	//************************************************StepDefs for Home Page validation**********************************//
+
+	@Before
+	public void before(Scenario scenario) {
+		this.scenario = scenario;
+	}
+
 	@Given("Start {string} and launch the website {string}")
-	public void launchTheWebsite(String browser,String url)
+	public void launchTheWebsite(String browser, String url)
 	{
+		String mName = scenario.getName();
 		System.out.println("-----Scenario Execution Started-----");
-		hp.startBrowser(browser,url);
+		hp.startBrowser(browser,url,mName);
 	}
 	
 	@When("^User is on the homePage of the website$")
@@ -155,14 +168,14 @@ public class StepDefs {
 	@Then("User clicks on Add Element button for {string} times to add element Add Remove Elements link")
 	public void userClickAddElementButtonAddRemoveElements(String n)
 	{
-		Integer i=Integer.valueOf(n);
+		int i= Integer.parseInt(n);
 		ARep.clickOnAddElementButtonAddRemoveElementsPage(i);
 	}
 	
 	@Then("User clicks on delete button for {string} times to delete element Add Remove Elements link")
 	public void userClickDeleteElementButtonAddRemoveElements(String n)
 	{
-		Integer i=Integer.valueOf(n);
+		int i= Integer.parseInt(n);
 		ARep.clickOnDeletebuttonAddRemoveElementsPage(i);
 	}
 	
@@ -209,7 +222,7 @@ public class StepDefs {
 	@Then("User validates the Page title as {string} on Broken Images link")
 	public void validatePageTitleAsBrokenImagesLink(String heading)
 	{
-		BIp.assertHomePageHeading(heading);
+		BIp.titleOfBrokenImagesPage(heading);
 	}
 	
 	@Then("User validates every image present on Broken Images page to check if it broken or not")
@@ -255,7 +268,7 @@ public class StepDefs {
 	@Then("User validates the Page title as {string} on Context Menu link")
 	public void validatePageTitleAsContextMenuLink(String heading)
 	{
-		CMp.assertHomePageHeading(heading);
+		CMp.titleOfContextMenuPage(heading);
 	}
 	
 	@Then("User validates the Page content that starts as {string} on Context Menu page")

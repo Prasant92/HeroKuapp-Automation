@@ -1,5 +1,6 @@
 package com.pages;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.apache.http.client.methods.HttpGet;
@@ -15,18 +16,18 @@ import org.apache.http.impl.client.HttpClientBuilder;
 
 public class BrokenImagesPage extends HomePage {
 
-	public BrokenImagesPage(WebDriver rdriver) {
+	public BrokenImagesPage(WebDriver driver) {
 		super(driver);
 	}
 
 	By BrokenImages_Option=By.xpath("//*[contains(text(),'Broken Images')]");
 	
-	By pageTitle=By.xpath("//*[contains(text(),'Broken Images')]");
+	By pageTitle=By.cssSelector("div[class='example'] h3");
 	
 	public void clickOnBrokenImagesPageLink()  {
 		if(driver.findElement(BrokenImages_Option).isEnabled())
 		{
-			WebDriverWait w=new WebDriverWait(driver, 10);
+			WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
 			w.until(ExpectedConditions.elementToBeClickable(BrokenImages_Option));
 			try {
 				Thread.sleep(2000);
@@ -47,7 +48,9 @@ public class BrokenImagesPage extends HomePage {
 	{
 		try {
 			Thread.sleep(4000);
+			System.out.println(heading1);
 			String heading2=driver.findElement(pageTitle).getText();
+			System.out.println(heading2);
 			Assert.assertEquals(heading1, heading2,"Page title assertion is not successful on Broken Images Page");
 			System.out.println("---------------------------------Step Passed---------------------------------");
 		} catch (Exception e) {

@@ -1,15 +1,21 @@
 package com.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
+
 public class AddRemoveElementsPage extends HomePage{
 
-	public AddRemoveElementsPage(WebDriver rdriver) {
+	public AddRemoveElementsPage(WebDriver driver) {
 		super(driver);
+
 	}
 
 By AddRemoveElements_Option=By.xpath("//*[contains(text(),'Add/Remove Elements')]");	
@@ -22,29 +28,31 @@ By deleteButton=By.xpath("//*[contains(text(), 'Delete')]");
 
 
 	public void clickOnAddRemoveElementsPageLink()  {
-		if(driver.findElement(AddRemoveElements_Option).isEnabled())
-		{
-			WebDriverWait w=new WebDriverWait(driver, 10);
-			w.until(ExpectedConditions.elementToBeClickable(AddRemoveElements_Option));
-			driver.findElement(AddRemoveElements_Option).click();
+		try {
+			new WebDriverWait(driver,Duration.ofSeconds(10)).until(
+						ExpectedConditions.elementToBeClickable(AddRemoveElements_Option)).click();
 			try {
 				Thread.sleep(5000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			System.out.println("---------------------------------Step Passed---------------------------------");
+		} catch (TimeoutException e) {
+			System.out.println("Exception caught");
 		}
 	}
 	
-	public void titleOfAddRemoveElementsPage(String heading1)
+	public boolean titleOfAddRemoveElementsPage(String heading1)
 	{
 		try {
 			Thread.sleep(5000);
 			String heading2=driver.findElement(pageTitle).getText();
 			Assert.assertEquals(heading1, heading2,"Page title assertion is not successful on AB Testing Page");
 			System.out.println("---------------------------------Step Passed---------------------------------");
-		} catch (Exception e) {
-			e.printStackTrace();
+			return true;
+		} catch (TimeoutException | InterruptedException e) {
+			System.out.println("Exception caught");
+			return false;
 		}
 	}
 	
@@ -55,31 +63,30 @@ By deleteButton=By.xpath("//*[contains(text(), 'Delete')]");
 			{
 				for(int i=1;i<=n;i++)
 				{
-					WebDriverWait w=new WebDriverWait(driver, 5);
-					w.until(ExpectedConditions.elementToBeClickable(addElementButton));
-					driver.findElement(addElementButton).click();
+					new WebDriverWait(driver, Duration.ofSeconds(10)).until(
+							ExpectedConditions.elementToBeClickable(addElementButton)).click();
 					Thread.sleep(2000);
 				}
 				System.out.println("---------------------------------Step Passed---------------------------------");
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (TimeoutException | InterruptedException e) {
+			System.out.println("Exception caught");
 		}
 	}
 	
 	public void clickOnDeletebuttonAddRemoveElementsPage(int n)
 	{
-		for(int i=n;i>=1;i--)
-		{
-			WebDriverWait w=new WebDriverWait(driver, 5);
-			w.until(ExpectedConditions.elementToBeClickable(deleteButton));
-			driver.findElement(By.xpath("//*[contains(text(), 'Delete')]["+i+"]")).click();
-			try {
+		try {
+			for(int i=n;i>=1;i--)
+			{
+				WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
+				w.until(ExpectedConditions.elementToBeClickable(deleteButton));
+				driver.findElement(By.xpath("//*[contains(text(), 'Delete')]["+i+"]")).click();
 				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
 			}
+			System.out.println("---------------------------------Step Passed---------------------------------");
+		} catch (TimeoutException | InterruptedException e) {
+			System.out.println("Exception caught");
 		}
-		System.out.println("---------------------------------Step Passed---------------------------------");
 	}
 }

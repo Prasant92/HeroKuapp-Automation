@@ -7,6 +7,7 @@ import org.testng.Assert;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 
 public class FileUploadPage extends HomePage{
 
@@ -25,7 +26,7 @@ public class FileUploadPage extends HomePage{
     public void clickOnFileUploadLink()  {
         if(driver.findElement(FileUpload_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(FileUpload_Option));
             try {
                 Thread.sleep(3000);
@@ -98,10 +99,10 @@ public class FileUploadPage extends HomePage{
 
     public static void DropFile(File filePath, WebElement target, int offsetX, int offsetY) throws InterruptedException {
         if(!filePath.exists())
-            throw new WebDriverException("File not found: " + filePath.toString());
+            throw new WebDriverException("File not found: " + filePath);
 
         JavascriptExecutor jse = (JavascriptExecutor)driver;
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
         String JS_DROP_FILE =
                 "var target = arguments[0]," +

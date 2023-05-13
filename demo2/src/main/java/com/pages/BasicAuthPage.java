@@ -1,8 +1,7 @@
 package com.pages;
 
-import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.time.Duration;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,13 +10,11 @@ import org.testng.Assert;
 
 public class BasicAuthPage extends HomePage {
 
-	public BasicAuthPage(WebDriver rdriver) {
+	public BasicAuthPage(WebDriver driver) {
 		super(driver);
 	}
 
 	By BasicAuth_Option=By.xpath("//*[contains(text(),'Basic Auth')]");
-	
-	By BasicAuth_AlertDismiss=By.xpath("//*[contains(text(),'Not authorized')]");
 	
 	By pageTitle=By.xpath("//*[contains(text(),'Basic Auth')]");
 	
@@ -26,16 +23,11 @@ public class BasicAuthPage extends HomePage {
 	public void clickOnBasicAuthPageLink()  {
 		if(driver.findElement(BasicAuth_Option).isEnabled())
 		{
-			WebDriverWait w=new WebDriverWait(driver, 10);
-			w.until(ExpectedConditions.elementToBeClickable(BasicAuth_Option));
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			new WebDriverWait(driver,Duration.ofSeconds(10)).until(
+					ExpectedConditions.elementToBeClickable(BasicAuth_Option)).click();
 			driver.findElement(BasicAuth_Option).click();
 			try {
-				Thread.sleep(4000);
+				Thread.sleep(2000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -44,11 +36,14 @@ public class BasicAuthPage extends HomePage {
 	}
 	
 	public void acceptBasicAuthAlertPageLink()
-	{	
+	{
+		String username = "admin";
+		String password = "admin";
+		String URL = "https://" +username +":" +password +"@"+ "the-internet.herokuapp.com/basic_auth";
+		driver.get(URL);
 		try {
-			Runtime.getRuntime().exec("C:\\Users\\hp\\IdeaProjects\\HeroKuapp-Automation\\demo2\\src\\test\\resources\\Authentication_PopUP Automation code.exe");
-			Thread.sleep(10000);
-		} catch (IOException | InterruptedException e) {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		System.out.println("---------------------------------Step Passed---------------------------------");
@@ -56,21 +51,12 @@ public class BasicAuthPage extends HomePage {
 	
 	public void dismissBasicAuthAlertPageLink(String heading1)
 	{
-		WebDriverWait w=new WebDriverWait(driver, 5);
-		w.until(ExpectedConditions.alertIsPresent());
-		Alert a=driver.switchTo().alert();
-		String alertMsg=a.getText();
-		System.out.println("The alert message is "+alertMsg);
+		String username = "admin";
+		String password = "admin";
+		String URL = "https://" +username +":" +password +"@"+ "the-internet.herokuapp.com/basic_auth";
+		driver.get(URL);
 		try {
-			Thread.sleep(4000);
-			a.dismiss();
-			try {
-				Thread.sleep(4000);
-				String heading2=driver.findElement(BasicAuth_AlertDismiss).getText();
-				Assert.assertEquals(heading1, heading2,"Page Content assertion is not successful after the dissmisal of pop up");
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

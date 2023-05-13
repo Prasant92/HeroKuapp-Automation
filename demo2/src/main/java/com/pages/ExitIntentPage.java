@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class ExitIntentPage extends HomePage{
 
     public ExitIntentPage(WebDriver rdriver) {
@@ -21,7 +23,7 @@ public class ExitIntentPage extends HomePage{
     public void clickOnExitIntentLink()  {
         if(driver.findElement(ExitIntent_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(ExitIntent_Option));
             try {
                 Thread.sleep(5000);

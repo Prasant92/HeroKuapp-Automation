@@ -11,6 +11,7 @@ Feature: To verify the different functionalities present on the Checkboxes page 
 			| browser      |
 			| Firefox      |
 			| GoogleChrome |
+			| Edge         |
 
 	Scenario Outline: To verify that user is successfully able to validate the Checkboxes page title
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
@@ -23,6 +24,7 @@ Feature: To verify the different functionalities present on the Checkboxes page 
 			| browser      |
 			| Firefox      |
 			| GoogleChrome |
+			| Edge         |
 
 	Scenario Outline: To verify that user is successfully able to check the unchecked checkboxes if any on Checkboxes page
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
@@ -35,6 +37,7 @@ Feature: To verify the different functionalities present on the Checkboxes page 
 			| browser      |
 			| Firefox      |
 			| GoogleChrome |
+			| Edge         |
 
 	Scenario Outline: To verify that user is successfully able to uncheck the checked checkboxes if any on Checkboxes page
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
@@ -47,3 +50,4 @@ Feature: To verify the different functionalities present on the Checkboxes page 
 			| browser      |
 			| Firefox      |
 			| GoogleChrome |
+			| Edge         |

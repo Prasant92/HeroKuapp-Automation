@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.io.IOException;
+import java.time.Duration;
 
 public class JavaScriptAlertsPage extends HomePage{
 
@@ -32,7 +33,7 @@ public class JavaScriptAlertsPage extends HomePage{
     public void clickOnJavaScriptAlertsLink()  {
         if(driver.findElement(JavaScriptAlerts_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(JavaScriptAlerts_Option));
             try {
                 Thread.sleep(3000);

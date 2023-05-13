@@ -10,11 +10,12 @@ Feature: To verify the different functionalities present on the Add/Remove Eleme
 		And User clicks on the "Add/Remove Elements" Add Remove Elements link
 		And Close the browser session
 		Examples:
-			| browser      |
-			| Firefox      |
-			| GoogleChrome |
+			|browser      |
+			|Firefox      |
+			|GoogleChrome |
+			|Edge         |
 
-	Scenario Outline: To verify that the Page title of A/B testing option is Add/Remove Elements
+	Scenario Outline: To verify that the Page title of Add/Remove elements option is Add/Remove Elements
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
 		When User is on the homePage of the website
 		Then Validate that heading of the homepage is "Welcome to the-internet"
@@ -22,9 +23,10 @@ Feature: To verify the different functionalities present on the Add/Remove Eleme
 		Then User validates the Page title as "Add/Remove Elements" Add Remove Elements link
 		And Close the browser session
 		Examples:
-			| browser      |
-			| Firefox      |
-			| GoogleChrome |
+			|browser      |
+			|Firefox      |
+			|GoogleChrome |
+			|Edge         |
 
 	Scenario Outline: To verify that the Add element option can be used n times on Add/Remove Elements page
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
@@ -34,9 +36,10 @@ Feature: To verify the different functionalities present on the Add/Remove Eleme
 		Then User clicks on Add Element button for "5" times to add element Add Remove Elements link
 		And Close the browser session
 		Examples:
-			| browser      |
-			| Firefox      |
-			| GoogleChrome |
+			|browser      |
+			|Firefox      |
+			|GoogleChrome |
+			|Edge         |
 
 	Scenario Outline: To verify that the delete option can be used n times on Add/Remove Elements page
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
@@ -47,6 +50,7 @@ Feature: To verify the different functionalities present on the Add/Remove Eleme
 		Then User clicks on delete button for "5" times to delete element Add Remove Elements link
 		And Close the browser session
 		Examples:
-			| browser      |
-			| Firefox      |
-			| GoogleChrome |
+			|browser      |
+			|Firefox      |
+			|GoogleChrome |
+			|Edge         |

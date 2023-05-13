@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class DropdownPage extends HomePage{
 
 
@@ -26,7 +28,7 @@ public class DropdownPage extends HomePage{
     public void clickOnDropdownPageLink()  {
         if(driver.findElement(Dropdown_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(Dropdown_Option));
             try {
                 Thread.sleep(2000);
@@ -58,7 +60,7 @@ public class DropdownPage extends HomePage{
     public void clickOnDropdown()
     {
         try {
-            WebDriverWait w = new WebDriverWait(driver, 10);
+            WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(clickDropdown));
             driver.findElement(clickDropdown).click();
             Thread.sleep(3000);

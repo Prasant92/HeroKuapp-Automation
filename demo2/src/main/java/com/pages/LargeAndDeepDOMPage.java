@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
 import java.util.List;
 
 public class LargeAndDeepDOMPage extends HomePage{
@@ -28,7 +29,7 @@ public class LargeAndDeepDOMPage extends HomePage{
     public void clickOnLargeAndDeepDOMLink()  {
         if(driver.findElement(LargeAndDeepDOM_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(LargeAndDeepDOM_Option));
             try {
                 Thread.sleep(3000);

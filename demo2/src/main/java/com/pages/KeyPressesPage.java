@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class KeyPressesPage extends  HomePage{
 
     By KeyPresses_Option=By.xpath("//*[contains(text(),'Key Presses')]");
@@ -25,7 +27,7 @@ public class KeyPressesPage extends  HomePage{
     public void clickOnKeyPressesLink()  {
         if(driver.findElement(KeyPresses_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(KeyPresses_Option));
             try {
                 Thread.sleep(3000);

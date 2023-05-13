@@ -1,14 +1,17 @@
 package com.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class ABTestingPage extends HomePage{
 
-	public ABTestingPage(WebDriver rdriver) {
+	public ABTestingPage(WebDriver driver) {
 		super(driver);
 	}
 
@@ -20,46 +23,42 @@ public class ABTestingPage extends HomePage{
 	
 	
 	public void clickOnLink()  {
-		if(driver.findElement(ABTesting_Option).isEnabled())
-		{
-			WebDriverWait w=new WebDriverWait(driver, 10);
-			w.until(ExpectedConditions.elementToBeClickable(ABTesting_Option));
-			try {
-				Thread.sleep(5000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			driver.findElement(ABTesting_Option).click();
-			try {
-				Thread.sleep(5000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+		try {
+			Thread.sleep(5000);
+			new WebDriverWait(driver,Duration.ofSeconds(10)).until(
+					ExpectedConditions.elementToBeClickable(ABTesting_Option)).click();
+			Thread.sleep(5000);
 			System.out.println("---------------------------------Step Passed---------------------------------");
+		} catch (TimeoutException | InterruptedException e) {
+			System.out.println("Exception caught");
 		}
 	}
 	
-	public void titleOfPage(String heading1)
+	public boolean titleOfPage(String heading1)
 	{
 		try {
 			Thread.sleep(5000);
 			String heading2=driver.findElement(pageTitle).getText();
 			Assert.assertEquals(heading1, heading2,"Page title assertion is not successful on AB Testing Page");
 			System.out.println("---------------------------------Step Passed---------------------------------");
-		} catch (Exception e) {
-			e.printStackTrace();
+			return true;
+		} catch (TimeoutException | InterruptedException e) {
+			System.out.println("Exception caught");
+			return false;
 		}
 	}
 	
-	public void contentOfPage(String content1)
+	public boolean contentOfPage(String content1)
 	{
 		try {
 			Thread.sleep(5000);
 			String content2=driver.findElement(pageTitleDefinition).getText();
 			Assert.assertEquals(content1, content2,"Page content assertion is not successful on AB testing page");
 			System.out.println("---------------------------------Step Passed---------------------------------");
-		} catch (Exception e) {
-			e.printStackTrace();
+			return true;
+		} catch (TimeoutException | InterruptedException e) {
+			System.out.println("Exception caught");
+			return false;
 		}
 	}
 }

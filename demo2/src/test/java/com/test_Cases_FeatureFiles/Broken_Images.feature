@@ -1,4 +1,4 @@
-@BrokenImages_Tests
+
 Feature: To verify the different functionalities present on the Broken Images page of Herokuapp website
 
 	Scenario Outline: To verify that Broken Images option is enabled and clickable
@@ -11,7 +11,8 @@ Feature: To verify the different functionalities present on the Broken Images pa
 			|browser	  |
 			|Firefox	  |
 			|GoogleChrome |
-
+			|Edge         |
+	@BrokenImages_Tests
 	Scenario Outline: To verify that user is successfully able to validate the Broken Images page title
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
 		When User is on the homePage of the website
@@ -23,6 +24,7 @@ Feature: To verify the different functionalities present on the Broken Images pa
 			| browser      |
 			| Firefox      |
 			| GoogleChrome |
+			|Edge         |
 
 	Scenario Outline: To verify that user is successfully able to find and validate the number of broken images on Broken Images page
 		Given Start "<browser>" and launch the website "https://the-internet.herokuapp.com/"
@@ -35,3 +37,4 @@ Feature: To verify the different functionalities present on the Broken Images pa
 			| browser      |
 			| Firefox      |
 			| GoogleChrome |
+			|Edge         |

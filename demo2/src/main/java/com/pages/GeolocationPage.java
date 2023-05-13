@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class GeolocationPage extends HomePage{
 
     By Geolocation_Option=By.xpath("//*[contains(text(),'Geolocation')]");
@@ -29,7 +31,7 @@ public class GeolocationPage extends HomePage{
     public void clickOnGeolocationLink()  {
         if(driver.findElement(Geolocation_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(Geolocation_Option));
             try {
                 Thread.sleep(3000);

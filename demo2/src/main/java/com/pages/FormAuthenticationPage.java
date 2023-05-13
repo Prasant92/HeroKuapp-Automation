@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class FormAuthenticationPage extends HomePage{
 
     By FormAuthentication_Option=By.xpath("//*[contains(text(),'Form Authentication')]");
@@ -39,7 +41,7 @@ public class FormAuthenticationPage extends HomePage{
     public void clickOnFormAuthenticationLink()  {
         if(driver.findElement(FormAuthentication_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(FormAuthentication_Option));
             try {
                 Thread.sleep(3000);

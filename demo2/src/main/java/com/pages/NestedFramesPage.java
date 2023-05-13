@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class NestedFramesPage extends FramesPage{
 
     By NestedFrames_Option=By.xpath("//*[contains(text(),'Nested Frames')]");
@@ -16,7 +18,7 @@ public class NestedFramesPage extends FramesPage{
     public void clickOnNestedFramesLink()  {
         if(driver.findElement(NestedFrames_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(NestedFrames_Option));
             try {
                 Thread.sleep(3000);

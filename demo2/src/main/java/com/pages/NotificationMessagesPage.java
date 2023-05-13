@@ -6,15 +6,17 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class NotificationMessagesPage extends HomePage {
 
     By NotificationMessages_Option=By.xpath("//*[contains(text(),'Notification Messages')]");
 
-    By pageTitle=By.xpath("//*[contains(text(),'Notification Message')]");
+    By pageTitle=By.cssSelector("div[id='content'] div h3");
 
     By pageContent=By.xpath("//*[contains(text(),'The message displayed above the heading is a notification message. It is often used to convey information about an action previously taken by the user.')]");
 
-    By flashMessage=By.id("flash");
+    By flashMessage=By.cssSelector("div[id='flash-messages'] div");
 
     By clickForNewMessage=By.xpath("//*[contains(text(),'Click here')]");
 
@@ -25,7 +27,7 @@ public class NotificationMessagesPage extends HomePage {
     public void clickOnNotificationMessagesLink()  {
         if(driver.findElement(NotificationMessages_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(NotificationMessages_Option));
             try {
                 Thread.sleep(3000);
@@ -45,7 +47,7 @@ public class NotificationMessagesPage extends HomePage {
     public void titleOfNotificationMessagesPage(String heading1)
     {
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
             String heading2=driver.findElement(pageTitle).getText();
             Assert.assertEquals(heading1, heading2,"Page title assertion is not successful on Notification Messages Page");
             System.out.println("---------------------------------Step Passed---------------------------------");

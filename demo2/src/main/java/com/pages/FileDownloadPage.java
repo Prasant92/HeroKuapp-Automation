@@ -11,6 +11,7 @@ import org.testng.Assert;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -33,7 +34,7 @@ public class FileDownloadPage extends HomePage{
     public void clickOnFileDownloadLink()  {
         if(driver.findElement(FileDownload_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(FileDownload_Option));
             try {
                 Thread.sleep(5000);

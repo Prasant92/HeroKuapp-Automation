@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class DynamicContentPage extends HomePage {
 
     public DynamicContentPage(WebDriver rdriver) {
@@ -23,7 +25,7 @@ public class DynamicContentPage extends HomePage {
     public void clickOnDynamicContentLink()  {
         if(driver.findElement(DynamicContent_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(DynamicContent_Option));
             try {
                 Thread.sleep(5000);
@@ -64,7 +66,7 @@ public class DynamicContentPage extends HomePage {
         int i=1;
         while(i<=n)
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(clickHereToChangeContentOnPage));
             driver.findElement(clickHereToChangeContentOnPage).click();
             try {

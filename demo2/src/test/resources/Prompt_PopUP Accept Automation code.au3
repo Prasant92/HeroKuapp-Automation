@@ -1,2 +1,2 @@
-Send("admin")
+Send(“admin”)
 Send((ENTER))

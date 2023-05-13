@@ -1,4 +1,4 @@
 Send("admin")
-Send("(TAB)")
+Send("{TAB}")
 Send("admin")
-Send("(ENTER)")
+Send("{ENTER}")

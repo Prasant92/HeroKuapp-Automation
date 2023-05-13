@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class DynamicLoadingPage extends HomePage {
 
     public DynamicLoadingPage(WebDriver rdriver) {
@@ -37,7 +39,7 @@ public class DynamicLoadingPage extends HomePage {
     public void clickOnDynamicLoadingLink()  {
         if(driver.findElement(DynamicLoading_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(DynamicLoading_Option));
             try {
                 Thread.sleep(5000);
@@ -75,7 +77,7 @@ public class DynamicLoadingPage extends HomePage {
 
     public void clickOnExample1LinkOfDynamicLoadingPage()
     {
-        WebDriverWait w=new WebDriverWait(driver, 10);
+        WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
         w.until(ExpectedConditions.elementToBeClickable(clickOnExample1Link));
         try {
             Thread.sleep(4000);
@@ -88,7 +90,7 @@ public class DynamicLoadingPage extends HomePage {
 
     public void clickOnExample2LinkOfDynamicLoadingPage()
     {
-        WebDriverWait w=new WebDriverWait(driver, 10);
+        WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
         w.until(ExpectedConditions.elementToBeClickable(clickOnExample2Link));
         try {
             Thread.sleep(4000);

@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class DynamicControlsPage extends HomePage{
 
     public DynamicControlsPage(WebDriver rdriver) {
@@ -34,7 +36,7 @@ public class DynamicControlsPage extends HomePage{
     public void clickOnDynamicControlsLink()  {
         if(driver.findElement(DynamicControls_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(DynamicControls_Option));
             try {
                 Thread.sleep(5000);
@@ -84,7 +86,7 @@ public class DynamicControlsPage extends HomePage{
 
     public void clickingRemoveOrAddButtonOnDynamicControlsPage()
     {
-        WebDriverWait w=new WebDriverWait(driver, 10);
+        WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
         w.until(ExpectedConditions.elementToBeClickable(clickRemoveOrAddButtonOnDynamicControlsPage));
         try {
             Thread.sleep(4000);
@@ -128,7 +130,7 @@ public class DynamicControlsPage extends HomePage{
 
     public void clickingEnableOrDisableButtonOnDynamicControlsPage()
     {
-        WebDriverWait w=new WebDriverWait(driver, 10);
+        WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
         w.until(ExpectedConditions.elementToBeClickable(clickEnableOrDisableButtonOnDynamicControlsPage));
         try {
             Thread.sleep(4000);

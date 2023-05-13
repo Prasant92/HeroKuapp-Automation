@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class EntryAdPage extends HomePage {
 
     public EntryAdPage(WebDriver rdriver) {
@@ -32,7 +34,7 @@ public class EntryAdPage extends HomePage {
     public void clickOnEntryAdLink()  {
         if(driver.findElement(EntryAd_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(EntryAd_Option));
             try {
                 Thread.sleep(5000);
@@ -72,7 +74,7 @@ public class EntryAdPage extends HomePage {
         if(driver.findElement(clickOnClickHereLink).isEnabled())
         {
             try {
-                WebDriverWait w=new WebDriverWait(driver, 10);
+                WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
                 w.until(ExpectedConditions.elementToBeClickable(clickOnClickHereLink));
                 WebElement ele=driver.findElement(clickOnClickHereLink);
                 JavascriptExecutor js=(JavascriptExecutor)driver;

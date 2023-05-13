@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class DisappearingElementsPage extends HomePage{
 
 
@@ -32,7 +34,7 @@ public class DisappearingElementsPage extends HomePage{
     public void clickOnDisappearingElementsPageLink()  {
         if(driver.findElement(DisappearingElements_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(DisappearingElements_Option));
             try {
                 Thread.sleep(2000);
@@ -84,7 +86,7 @@ public class DisappearingElementsPage extends HomePage{
             Assert.assertEquals(content1, content2,"Page content assertion is not successful on About page of Disappearing Elements functionality");
             driver.get(getURL);
             Thread.sleep(8000);
-            WebDriverWait w2=new WebDriverWait(driver, 10);
+            WebDriverWait w2=new WebDriverWait(driver, Duration.ofSeconds(10));
             w2.until(ExpectedConditions.elementToBeClickable(DisappearingElements_AboutLink));
             System.out.println("---------------------------------Step Passed---------------------------------");
         } catch (Exception e) {
@@ -103,7 +105,7 @@ public class DisappearingElementsPage extends HomePage{
             Assert.assertEquals(content1, content2,"Page content assertion is not successful on Contact Us page of Disappearing Elements functionality");
             driver.get(getURL);
             Thread.sleep(8000);
-            WebDriverWait w2=new WebDriverWait(driver, 10);
+            WebDriverWait w2=new WebDriverWait(driver, Duration.ofSeconds(10));
             w2.until(ExpectedConditions.elementToBeClickable(DisappearingElements_ContactUs));
             System.out.println("---------------------------------Step Passed---------------------------------");
         } catch (Exception e) {
@@ -114,7 +116,7 @@ public class DisappearingElementsPage extends HomePage{
     public void clickOnPortfolioLinkOfDisappearingElementsPage(String content1)
     {
         try {
-            WebDriverWait w1=new WebDriverWait(driver, 10);
+            WebDriverWait w1=new WebDriverWait(driver, Duration.ofSeconds(10));
             w1.until(ExpectedConditions.elementToBeClickable(DisappearingElements_PortfolioLink));
             String getURL=driver.getCurrentUrl();
             driver.findElement(DisappearingElements_PortfolioLink).click();
@@ -123,7 +125,7 @@ public class DisappearingElementsPage extends HomePage{
             Assert.assertEquals(content1, content2,"Page content assertion is not successful on Portfolio page of Disappearing Elements functionality");
             driver.get(getURL);
             Thread.sleep(8000);
-            WebDriverWait w2=new WebDriverWait(driver, 10);
+            WebDriverWait w2=new WebDriverWait(driver, Duration.ofSeconds(10));
             w2.until(ExpectedConditions.elementToBeClickable(DisappearingElements_PortfolioLink));
             System.out.println("---------------------------------Step Passed---------------------------------");
         } catch (Exception e) {
@@ -134,7 +136,7 @@ public class DisappearingElementsPage extends HomePage{
     public void clickOnHomeLinkOfDisappearingElementsPage(String content1)
     {
         try {
-            WebDriverWait w1=new WebDriverWait(driver, 10);
+            WebDriverWait w1=new WebDriverWait(driver, Duration.ofSeconds(10));
             w1.until(ExpectedConditions.elementToBeClickable(DisappearingElements_HomeLink));
             String getURL=driver.getCurrentUrl();
             driver.findElement(DisappearingElements_HomeLink).click();
@@ -143,7 +145,7 @@ public class DisappearingElementsPage extends HomePage{
             Assert.assertEquals(content1, content2,"Page title assertion is not successful on Home page of Disappearing Elements functionality");
             driver.get(getURL);
             Thread.sleep(8000);
-            WebDriverWait w2=new WebDriverWait(driver, 10);
+            WebDriverWait w2=new WebDriverWait(driver, Duration.ofSeconds(10));
             w2.until(ExpectedConditions.elementToBeClickable(DisappearingElements_HomeLink));
             System.out.println("---------------------------------Step Passed---------------------------------");
         } catch (Exception e) {

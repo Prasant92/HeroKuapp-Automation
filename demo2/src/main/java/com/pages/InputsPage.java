@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class InputsPage extends  HomePage{
 
     By Inputs_Option=By.xpath("//*[contains(text(),'Inputs')]");
@@ -25,7 +27,7 @@ public class InputsPage extends  HomePage{
     public void clickOnInputsLink()  {
         if(driver.findElement(Inputs_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(Inputs_Option));
             try {
                 Thread.sleep(3000);

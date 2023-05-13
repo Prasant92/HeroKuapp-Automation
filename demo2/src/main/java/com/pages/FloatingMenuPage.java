@@ -9,6 +9,7 @@ import org.testng.Assert;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.time.Duration;
 
 public class FloatingMenuPage extends HomePage{
 
@@ -32,7 +33,7 @@ public class FloatingMenuPage extends HomePage{
     public void clickOnFloatingMenuLink()  {
         if(driver.findElement(FloatingMenu_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(FloatingMenu_Option));
             try {
                 Thread.sleep(3000);
@@ -67,7 +68,7 @@ public class FloatingMenuPage extends HomePage{
             long lastHeight=((Number)js.executeScript("return document.body.scrollHeight")).longValue();
             while (true) {
                 ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight);");
-                Thread.sleep(4000);
+                Thread.sleep(3000);
 
                 long newHeight = ((Number)js.executeScript("return document.body.scrollHeight")).longValue();
                 if (newHeight == lastHeight) {

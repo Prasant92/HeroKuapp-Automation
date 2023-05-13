@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class JavaScriptOnloadEventError extends HomePage{
 
     By JavaScriptOnloadEventError_Option=By.xpath("//*[contains(text(),'JavaScript onload event error')]");
@@ -19,7 +21,7 @@ public class JavaScriptOnloadEventError extends HomePage{
     public void clickOnJavaScriptOnloadEventErrorLink()  {
         if(driver.findElement(JavaScriptOnloadEventError_Option).isEnabled())
         {
-            WebDriverWait w=new WebDriverWait(driver, 10);
+            WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(10));
             w.until(ExpectedConditions.elementToBeClickable(JavaScriptOnloadEventError_Option));
             try {
                 Thread.sleep(3000);
